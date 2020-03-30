@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="351.0" prefWidth="700.0" style="-fx-background-color: #fdfbc4;" 
+            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.ihmProject.hotelManagement.controller.LoginPageController">
+    <children>
+      <ImageView fitHeight="370.0" fitWidth="350.0" opacity="0.11" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/photo-1545175707-9eec1209f720.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="358.0" fitWidth="350.0" layoutX="351.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/photo-1545175707-9eec1209f720.jpg" />
+         </image>
+         <effect>
+            <BoxBlur height="68.75" iterations="3" width="90.0" />
+         </effect>
+      </ImageView>
+        <Line endX="25.0" endY="209.0" layoutX="325.0" layoutY="127.0" startX="26.0" startY="-127.0" style="-fx-cursor: #4b636e;">
+            <stroke>
+                <LinearGradient endX="1.0" endY="0.8952380952380953" startX="0.6428571428571429">
+                    <stops>
+                        <Stop color="#4c636e23" />
+                        <Stop color="#ffbd4524" offset="0.007662835249042145" />
+                        <Stop color="#ffbd45" offset="0.2999565509341549" />
+                        <Stop color="#ffbd45" offset="0.60919540229885" />
+                        <Stop color="#ffbc4734" offset="1.0" />
+                    </stops>
+                </LinearGradient>
+            </stroke>
+        </Line>
+        <Label layoutX="23.0" layoutY="151.0" prefHeight="50.0" prefWidth="305.0" text="La Vida é Bella Hotel">
+            <font>
+                <Font name="Kunstler Script" size="40.0" />
+            </font>
+            <textFill>
+                <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="0.7571428571428571">
+                    <stops>
+                        <Stop color="#ab472982" />
+                        <Stop color="#f7d71e" offset="0.4789272030651336" />
+                        <Stop color="#ad2b00b8" offset="1.0" />
+                    </stops>
+                </LinearGradient>
+            </textFill>
+        </Label>
+        <JFXTextField fx:id="loginUsernameLabel" labelFloat="true" layoutX="458.0" layoutY="132.0" promptText="Username" unFocusColor="#c236364d" viewOrder="1.0">
+    
+            <focusColor>
+                <LinearGradient endX="1.0" endY="0.9142857142857143" startX="0.3" startY="0.15714285714285714">
+                    <stops>
+                        <Stop color="#c21a0066" />
+                        <Stop color="#c21a0090" offset="0.7285223367697594" />
+                        <Stop color="#bf1a00ef" offset="1.0" />
+                    </stops>
+                </LinearGradient>
+            </focusColor>
+        </JFXTextField>
+        <JFXPasswordField fx:id="loginPasswordLabel" labelFloat="true" layoutX="458.0" layoutY="182.0" promptText="Password" unFocusColor="#c236364b">
+            <focusColor>
+                <LinearGradient endX="1.0" endY="1.0" startX="0.3" startY="0.15714285714285714">
+                    <stops>
+                        <Stop color="#c21a0058" />
+                        <Stop color="#c41c00" offset="1.0" />
+                    </stops>
+                </LinearGradient>
+            </focusColor>
+        </JFXPasswordField>
+        <JFXButton fx:id="loginConnectButton" layoutX="449.0" layoutY="227.0" opacity="0.82" prefHeight="30.0" prefWidth="152.0" style="-fx-background-color: #ffa270;" text="CONNECT" textFill="WHITE">
+            <ripplerFill>
+                <LinearGradient endX="1.0" endY="0.9142857142857143" startX="0.17619047619047618" startY="0.15714285714285714">
+                    <stops>
+                        <Stop color="#c21a00de" />
+                        <Stop color="#c21a0090" offset="0.7285223367697594" />
+                        <Stop color="#c21a0027" offset="1.0" />
+                    </stops>
+                </LinearGradient>
+            </ripplerFill>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+        </JFXButton>
+      <Label layoutX="477.0" layoutY="291.0" text="Forgot password ?" textFill="#0d0875">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Label>
+      <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="415.0" layoutY="133.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../Desktop/SIR-S6/IHM/JFX%20project/icons/2x/round_person_black_18dp.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="415.0" layoutY="183.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../Desktop/SIR-S6/IHM/JFX%20project/icons/2x/round_vpn_key_black_18dp.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </ImageView>
+      <JFXButton fx:id="loginConnectButton1" layoutX="99.0" layoutY="227.0" opacity="0.82" prefHeight="30.0" prefWidth="152.0" style="-fx-background-color: #ffa270;" text="REGISTER" textFill="WHITE">
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="0.9142857142857143" startX="0.17619047619047618" startY="0.15714285714285714">
+               <stops>
+                  <Stop color="#c21a00de" />
+                  <Stop color="#c21a0090" offset="0.7285223367697594" />
+                  <Stop color="#c21a0027" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+    </children>
+</AnchorPane>

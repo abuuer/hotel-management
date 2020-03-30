@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXNodesList?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="572.0" prefWidth="458.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ihmProject.hotelManagement.controller.ResultsPageController">
+<children> 
+    <ImageView fitHeight="572.0" fitWidth="460.0" opacity="0.22" pickOnBounds="true">
+        <image>
+            <Image url="@../../java/com/ihmProject/hotelManagement/assets/dimitry-anikin-p2Zida5fIbg-unsplash.jpg" />
+        </image>
+        <effect>
+            <DropShadow height="255.0" radius="127.0" width="255.0" />
+        </effect>
+    </ImageView>
+      <JFXNodesList fx:id="nodeListHotels" layoutX="53.0" layoutY="77.0" prefHeight="40.0" prefWidth="79.0">
+         <children>
+            <HBox prefHeight="176.0" prefWidth="354.0" spacing="20.0">
+               <children>
+                <ImageView fx:id="resHotelImage" fitHeight="182.0" fitWidth="150.0" opacity="0.74" pickOnBounds="true" preserveRatio="true">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <image>
+                        <Image url="@../../java/com/ihmProject/hotelManagement/assets/photo-1545175707-9eec1209f720.jpg" />
+                    </image>
+                </ImageView>
+                  <VBox prefHeight="176.0" prefWidth="160.0">
+                     <children>
+                      <Label fx:id="resHotelName" prefHeight="25.0" prefWidth="154.0" text="ds" />
+                      <Label fx:id="resCityName" prefHeight="25.0" prefWidth="180.0" text="ds" />
+                      <Label fx:id="resStars" prefHeight="25.0" prefWidth="196.0" text="ds" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </JFXNodesList>
+</children>
+</AnchorPane>
