@@ -20,7 +20,7 @@ import org.springframework.context.ConfigurableApplicationContext;
  */
 public class JavaFxApplication extends Application {
 
-     ConfigurableApplicationContext applicationContext;
+    ConfigurableApplicationContext applicationContext;
 
     //this is where the spring starts
     @Override

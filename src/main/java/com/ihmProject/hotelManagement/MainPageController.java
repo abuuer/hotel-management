@@ -70,6 +70,7 @@ public class MainPageController implements Initializable {
         this.cmBoxCitiesSearch.setItems(data);
     }
 
+    
     public void switchToReserch(ActionEvent event) throws IOException {
         System.out.println("Search clicked");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ResultsPage.fxml"));
