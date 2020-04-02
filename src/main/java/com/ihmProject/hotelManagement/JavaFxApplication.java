@@ -20,7 +20,9 @@ import org.springframework.context.ConfigurableApplicationContext;
  */
 public class JavaFxApplication extends Application {
 
-    ConfigurableApplicationContext applicationContext;
+    public static ConfigurableApplicationContext applicationContext;
+    public static Stage newStage ; 
+    public static String cityName ; 
 
     //this is where the spring starts
     @Override
@@ -39,11 +41,13 @@ public class JavaFxApplication extends Application {
 
     //this is where the javaFcX
     @Override
-    public void start(Stage stage) {
+    public void start(final Stage stage) {
+    	JavaFxApplication.newStage = stage ;
         FxWeaver fxWeaver = applicationContext.getBean(FxWeaver.class);
         Parent root = fxWeaver.loadView(MainPageController.class);
         Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        JavaFxApplication.newStage.setScene(scene);
+        JavaFxApplication.newStage.show();
+        JavaFxApplication.newStage.setResizable(false);
     }
 }

@@ -32,6 +32,7 @@ public class Hotel implements Serializable {
     private int stars ;
     private String adress ;
     private String zipCode ;
+    private String image ;
     @OneToMany(mappedBy = "hotel")
     private List<Reservation> reservations;
     @OneToMany(mappedBy = "hotel")
@@ -50,6 +51,14 @@ public class Hotel implements Serializable {
         this.stars = stars;
         this.adress = adress;
         this.zipCode = zipCode;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getReference() {
@@ -164,7 +173,9 @@ public class Hotel implements Serializable {
 
     @Override
     public String toString() {
-        return "com.ihmProject.hotelManagement.spring.bean.Hotel[ id=" + id + " ]";
+        return "Hotel{" + "id=" + id + ", reference=" + reference + ", city=" + city + ", region=" + region + ", phoneNumber=" + phoneNumber + ", name=" + name + ", stars=" + stars + ", adress=" + adress + ", zipCode=" + zipCode + '}';
     }
+
+    
     
 }

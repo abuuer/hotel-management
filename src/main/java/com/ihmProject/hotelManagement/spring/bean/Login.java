@@ -95,9 +95,10 @@ public class Login implements Serializable {
         return true;
     }
 
-    @Override
-    public String toString() {
-        return "com.ihmProject.hotelManagement.spring.bean.Login[ id=" + id + " ]";
-    }
+	@Override
+	public String toString() {
+		return "Login [userName=" + userName + ", password=" + password + "]";
+	}
+
     
 }
