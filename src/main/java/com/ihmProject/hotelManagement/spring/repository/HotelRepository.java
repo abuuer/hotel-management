@@ -20,7 +20,7 @@ public interface HotelRepository extends JpaRepository<Hotel, Long> {
     
     List<Hotel> findByCity(String city);
 
-    List<Hotel> findByName(String name);
+    Hotel findByName(String name);
 
     List<Hotel> findByStars(String stars);
 

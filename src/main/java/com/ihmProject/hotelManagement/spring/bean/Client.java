@@ -29,7 +29,7 @@ public class Client implements Serializable {
     private String LastName ;
     private String adress ;
     private String email ;
-    private int age ;
+    private String age ;
     
     @OneToMany(mappedBy = "client")
     private List<Reservation> reservations;
@@ -37,7 +37,7 @@ public class Client implements Serializable {
     public Client() {
     }
 
-    public Client(Long id, String code, String firstName, String LastName, String adress, String email, int age) {
+    public Client(Long id, String code, String firstName, String LastName, String adress, String email, String age) {
         this.id = id;
         this.code = code;
         this.firstName = firstName;
@@ -104,11 +104,11 @@ public class Client implements Serializable {
         this.email = email;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
     

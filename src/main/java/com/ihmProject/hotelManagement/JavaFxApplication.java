@@ -5,6 +5,9 @@
  */
 package com.ihmProject.hotelManagement;
 
+import com.ihmProject.hotelManagement.spring.bean.Client;
+import com.ihmProject.hotelManagement.spring.bean.Hotel;
+import com.ihmProject.hotelManagement.spring.bean.Reservation;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Parent;
@@ -22,7 +25,10 @@ public class JavaFxApplication extends Application {
 
     public static ConfigurableApplicationContext applicationContext;
     public static Stage newStage ; 
-    public static String cityName ; 
+    public static String chosenCity ; 
+    public static Hotel chosenHotel = new Hotel(); 
+    public static Reservation reservation = new Reservation() ;
+    public static Client client = new Client();
 
     //this is where the spring starts
     @Override

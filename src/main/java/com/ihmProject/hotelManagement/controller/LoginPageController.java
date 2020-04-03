@@ -5,10 +5,10 @@ package com.ihmProject.hotelManagement.controller;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import com.ihmProject.hotelManagement.JavaFxApplication;
 import com.ihmProject.hotelManagement.MainPageController;
 import com.ihmProject.hotelManagement.spring.bean.Login;
+import com.ihmProject.hotelManagement.spring.bean.SignUp;
 import com.ihmProject.hotelManagement.spring.service.impl.LoginImpl;
 import com.jfoenix.controls.*;
 import java.io.IOException;
@@ -60,7 +60,7 @@ public class LoginPageController implements Initializable {
 
     private LoginImpl login;
     private Login userLogin;
-    private Login foundedUser;
+    private SignUp foundedUser;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -82,13 +82,12 @@ public class LoginPageController implements Initializable {
         pt.setOnFinished(e -> {
 
         });
+        int res = login.confirmLogin(userLogin);
         try {
-            if (foundedUser == null) {
-                loginIncorrectPswrd.setVisible(true);
-            } else if (!foundedUser.getPassword().equals(loginPasswordLabel.getText())) {
-                loginIncorrectPswrd.setVisible(true);
-            } else {
+            if (res == 1) {
                 loginIncorrectPswrd.setVisible(false);
+            } else {
+                loginIncorrectPswrd.setVisible(true);
             }
         } catch (Exception ev) {
             ev.printStackTrace();
@@ -101,8 +100,10 @@ public class LoginPageController implements Initializable {
 //	}
     public void goBackToLogin(ActionEvent event) throws IOException {
         loginButton.getScene().getWindow().hide();
-        FxWeaver fxWeaver = JavaFxApplication.applicationContext.getBean(FxWeaver.class);
-        Parent root = fxWeaver.loadView(MainPageController.class);
+        FxWeaver fxWeaver = JavaFxApplication.applicationContext.getBean(FxWeaver.class
+        );
+        Parent root = fxWeaver.loadView(MainPageController.class
+        );
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);

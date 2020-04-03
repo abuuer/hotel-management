@@ -6,13 +6,13 @@
 package com.ihmProject.hotelManagement.spring.bean;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  *
@@ -26,10 +26,10 @@ public class Reservation implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String reference ;
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date checkIn ;
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date checkOut ;
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    private LocalDate checkIn ;
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    private LocalDate checkOut ;
     private int numberOfAdults ;
     private int numberOfChilds ;
     private int numberOfRooms ;
@@ -43,7 +43,7 @@ public class Reservation implements Serializable {
     public Reservation() {
     }
 
-    public Reservation(Long id, String reference, Date checkIn, Date checkOut, int numberOfAdults, int numberOfChilds, int numberOfRooms) {
+    public Reservation(Long id, String reference, LocalDate checkIn, LocalDate checkOut, int numberOfAdults, int numberOfChilds, int numberOfRooms) {
         this.id = id;
         this.reference = reference;
         this.checkIn = checkIn;
@@ -77,19 +77,19 @@ public class Reservation implements Serializable {
         this.reference = reference;
     }
 
-    public Date getCheckIn() {
+    public LocalDate getCheckIn() {
         return checkIn;
     }
 
-    public void setCheckIn(Date checkIn) {
+    public void setCheckIn(LocalDate checkIn) {
         this.checkIn = checkIn;
     }
 
-    public Date getCheckOut() {
+    public LocalDate getCheckOut() {
         return checkOut;
     }
 
-    public void setCheckOut(Date checkOut) {
+    public void setCheckOut(LocalDate checkOut) {
         this.checkOut = checkOut;
     }
 

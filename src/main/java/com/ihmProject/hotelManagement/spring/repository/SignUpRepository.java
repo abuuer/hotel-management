@@ -5,7 +5,8 @@
  */
 package com.ihmProject.hotelManagement.spring.repository;
 
-import com.ihmProject.hotelManagement.spring.bean.Room;
+import com.ihmProject.hotelManagement.spring.bean.SignUp;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,6 +15,8 @@ import org.springframework.stereotype.Repository;
  * @author anoir
  */
 @Repository
-public interface RoomRepository extends JpaRepository<Room, Long>{
-     
+public interface SignUpRepository extends JpaRepository<SignUp, Long> {
+
+    SignUp findByUserName(String userName);
+    
 }

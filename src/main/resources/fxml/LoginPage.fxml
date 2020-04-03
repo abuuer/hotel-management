@@ -15,9 +15,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="351.0" prefWidth="700.0" style="-fx-background-color: #fdfbc4;"
-            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" 
-            fx:controller="com.ihmProject.hotelManagement.controller.LoginPageController">
+<AnchorPane prefHeight="351.0" prefWidth="700.0" style="-fx-background-color: #fdfbc4;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ihmProject.hotelManagement.controller.LoginPageController">
     <children>
       <ImageView fitHeight="370.0" fitWidth="350.0" opacity="0.11" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -45,7 +43,7 @@
                 </LinearGradient>
             </stroke>
         </Line>
-        <Label layoutX="23.0" layoutY="151.0" prefHeight="50.0" prefWidth="305.0" text="La Vida é Bella Hotel">
+        <Label layoutX="23.0" layoutY="151.0" prefHeight="50.0" prefWidth="305.0" text="La Vida é Bella Agency">
             <font>
                 <Font name="Kunstler Script" size="40.0" />
             </font>
@@ -59,14 +57,14 @@
                 </LinearGradient>
             </textFill>
         </Label>
-        <JFXTextField fx:id="loginUsernameLabel" labelFloat="true" layoutX="458.0" layoutY="132.0" promptText="Username" unFocusColor="#c236364d">
+        <JFXTextField fx:id="loginUsernameLabel" labelFloat="true" layoutX="458.0" layoutY="132.0" promptText="Username" unFocusColor="#c236366a">
     
             <focusColor>
                 <LinearGradient endX="1.0" endY="0.9142857142857143" startX="0.3" startY="0.15714285714285714">
                     <stops>
                         <Stop color="#c21a0066" />
-                        <Stop color="#c21a0090" offset="0.7285223367697594" />
-                        <Stop color="#bf1a00ef" offset="1.0" />
+                        <Stop color="#c21a008f" offset="0.7285223367697594" />
+                        <Stop color="#bf1a00f0" offset="1.0" />
                     </stops>
                 </LinearGradient>
             </focusColor>

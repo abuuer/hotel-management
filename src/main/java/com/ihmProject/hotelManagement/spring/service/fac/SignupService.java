@@ -5,16 +5,18 @@
  */
 package com.ihmProject.hotelManagement.spring.service.fac;
 
-import com.ihmProject.hotelManagement.spring.bean.Login;
 import com.ihmProject.hotelManagement.spring.bean.SignUp;
+import java.util.List;
 
 /**
  *
  * @author anoir
  */
-public interface LoginService {
+public interface SignupService {
+
+    int save(SignUp login);
 
     SignUp findByUserName(String userName);
-
-    int confirmLogin(Login login);
+    
+    List<SignUp> findAll();
 }

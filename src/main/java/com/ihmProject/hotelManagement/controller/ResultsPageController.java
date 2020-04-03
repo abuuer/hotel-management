@@ -18,11 +18,15 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
@@ -87,12 +91,30 @@ public class ResultsPageController implements Initializable {
     @FXML
     private Label resPageNumber;
 
+    @FXML
+    private HBox bigHBox;
+
+    @FXML
+    private HBox bigHBox1;
+
+    @FXML
+    private HBox bigHBox2;
+
+    @FXML
+    private VBox hbChildVbox;
+
+    @FXML
+    private VBox hbChildVbox1;
+
+    @FXML
+    private VBox hbChildVbox2;
+
     private HotelImpl hotel;
     private List<Hotel> listHotels = new ArrayList<>();
     private int i = 0;
     int cmp = listHotels.size();
-    int pageNumber = 1;
-    int x = ((int)(listHotels.size() / 3)) + 1;
+    static int pageNumber = 1;
+    int x = ((int) (listHotels.size() / 3)) + 2;
 
     @Autowired
     public ResultsPageController(HotelImpl hotel) {
@@ -101,12 +123,13 @@ public class ResultsPageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        listHotels = hotel.findByCity(JavaFxApplication.cityName);
-        resCityName.setText(JavaFxApplication.cityName);
+        listHotels = hotel.findByCity(JavaFxApplication.chosenCity);
+        resCityName.setText(JavaFxApplication.chosenCity);
         System.out.println("hi");
         System.out.println(listHotels);
         displayHotels();
         resPageNumber.setText(pageNumber + " / " + x);
+
     }
 
     public void goToNextPage() {
@@ -120,7 +143,6 @@ public class ResultsPageController implements Initializable {
             this.i = listHotels.size() - 3;
         }
         displayHotels();
-
     }
 
     public void goToPreviousPage() {
@@ -161,4 +183,40 @@ public class ResultsPageController implements Initializable {
         stage.setResizable(false);
     }
 
+    public void goToReservation(MouseEvent event) throws IOException {
+        resHotelName.getScene().getWindow().hide();
+        Label labelIn = null;
+        
+        if (event.getSource() == bigHBox) {
+            Node nodeOut = bigHBox.getChildren().get(1);
+            if (nodeOut instanceof VBox) {
+                labelIn = (Label) ((VBox) nodeOut).getChildren().get(0);
+            }
+            JavaFxApplication.chosenHotel = hotel.findByName(labelIn.getText());
+            JavaFxApplication.reservation.setHotel(JavaFxApplication.chosenHotel);
+        } else if (event.getSource() == bigHBox1) {
+            Node nodeOut = bigHBox1.getChildren().get(1);
+            System.out.println(nodeOut);
+            if (nodeOut instanceof VBox) {
+                labelIn = (Label) ((VBox) nodeOut).getChildren().get(0);
+            }
+            JavaFxApplication.chosenHotel = hotel.findByName(labelIn.getText());
+            JavaFxApplication.reservation.setHotel(JavaFxApplication.chosenHotel);
+        } else if (event.getSource() == bigHBox2) {
+            Node nodeOut = bigHBox2.getChildren().get(1);
+            System.out.println(nodeOut);
+            if (nodeOut instanceof VBox) {
+                labelIn = (Label) ((VBox) nodeOut).getChildren().get(0);
+            }
+            JavaFxApplication.chosenHotel = hotel.findByName(labelIn.getText());
+            JavaFxApplication.reservation.setHotel(JavaFxApplication.chosenHotel);
+        }
+
+        FxWeaver fxWeaver = JavaFxApplication.applicationContext.getBean(FxWeaver.class);
+        Parent root = fxWeaver.loadView(ReservationController.class);
+        Scene scene = new Scene(root);
+        JavaFxApplication.newStage.setScene(scene);
+        JavaFxApplication.newStage.show();
+        JavaFxApplication.newStage.setResizable(true);
+    }
 }

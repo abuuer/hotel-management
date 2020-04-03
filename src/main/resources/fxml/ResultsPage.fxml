@@ -39,103 +39,94 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <VBox fx:id="bigVbox" layoutX="114.0" layoutY="77.0" prefHeight="150.0" prefWidth="331.0">
+      <HBox fx:id="bigHBox" layoutX="114.0" layoutY="77.0" onMouseClicked="#goToReservation" prefHeight="150.0" prefWidth="366.0">
          <children>
-            <HBox fx:id="vbChildHBox" prefHeight="150.0" prefWidth="438.0">
+            <ImageView fx:id="hbChildImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/photo-1545175707-9eec1209f720.jpg" />
+               </image>
+            </ImageView>
+            <VBox fx:id="hbChildVbox" prefHeight="150.0" prefWidth="226.0">
                <children>
-                  <ImageView fx:id="hbChildImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/photo-1545175707-9eec1209f720.jpg" />
-                     </image>
-                  </ImageView>
-                  <VBox fx:id="hbChildVbox" prefHeight="150.0" prefWidth="226.0">
-                     <children>
-                        <Label fx:id="resHotelName" alignment="TOP_LEFT" prefHeight="40.0" prefWidth="141.0" text="Label">
-                           <font>
-                              <Font name="Kunstler Script" size="29.0" />
-                           </font></Label>
-                        <Label fx:id="resCityName" layoutX="35.0" layoutY="115.0" prefHeight="31.0" prefWidth="145.0" text="Label" />
-                        <Rating fx:id="resHotelStars" rating="3.5" />
-                     </children>
-                     <padding>
-                        <Insets left="25.0" />
-                     </padding>
-                  </VBox>
+                  <Label fx:id="resHotelName" alignment="TOP_LEFT" prefHeight="40.0" prefWidth="141.0" text="Label">
+                     <font>
+                        <Font name="Kunstler Script" size="29.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="resCityName" layoutX="35.0" layoutY="115.0" prefHeight="31.0" prefWidth="145.0" text="Label" />
+                  <Rating fx:id="resHotelStars" rating="3.5" />
                </children>
                <padding>
-                  <Insets right="15.0" />
+                  <Insets left="25.0" />
                </padding>
-            </HBox>
+            </VBox>
          </children>
+         <padding>
+            <Insets right="15.0" />
+         </padding>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
-      </VBox>
-      <VBox fx:id="bigVbox1" layoutX="114.0" layoutY="257.0" prefHeight="150.0" prefWidth="331.0">
+      </HBox>
+      <HBox fx:id="bigHBox1" layoutX="114.0" layoutY="257.0" onMouseClicked="#goToReservation" prefHeight="150.0" prefWidth="342.0">
          <children>
-            <HBox fx:id="vbChildHBox1" prefHeight="150.0" prefWidth="342.0">
+            <ImageView fx:id="hbChildImage1" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/photo-1545175707-9eec1209f720.jpg" />
+               </image>
+            </ImageView>
+            <VBox fx:id="hbChildVbox1" prefHeight="150.0" prefWidth="226.0">
                <children>
-                  <ImageView fx:id="hbChildImage1" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/photo-1545175707-9eec1209f720.jpg" />
-                     </image>
-                  </ImageView>
-                  <VBox fx:id="hbChildVbox1" prefHeight="150.0" prefWidth="226.0">
-                     <children>
-                        <Label fx:id="resHotelName1" alignment="TOP_LEFT" prefHeight="47.0" prefWidth="150.0" text="Label">
-                           <font>
-                              <Font name="Kunstler Script" size="29.0" />
-                           </font></Label>
-                        <Label fx:id="resCityName1" layoutX="35.0" layoutY="115.0" prefHeight="31.0" prefWidth="145.0" text="Label" />
-                        <Rating fx:id="resHotelStars1" rating="3.5" />
-                     </children>
-                     <padding>
-                        <Insets left="25.0" />
-                     </padding>
-                  </VBox>
+                  <Label fx:id="resHotelName1" alignment="TOP_LEFT" prefHeight="47.0" prefWidth="150.0" text="Label">
+                     <font>
+                        <Font name="Kunstler Script" size="29.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="resCityName1" layoutX="35.0" layoutY="115.0" prefHeight="31.0" prefWidth="145.0" text="Label" />
+                  <Rating fx:id="resHotelStars1" rating="3.5" />
                </children>
                <padding>
-                  <Insets right="15.0" />
+                  <Insets left="25.0" />
                </padding>
-            </HBox>
+            </VBox>
          </children>
+         <padding>
+            <Insets right="15.0" />
+         </padding>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
-      </VBox>
-      <VBox fx:id="bigVbox11" layoutX="114.0" layoutY="450.0" prefHeight="150.0" prefWidth="331.0">
+      </HBox>
+      <HBox fx:id="bigHBox2" layoutX="114.0" layoutY="450.0" onMouseClicked="#goToReservation" prefHeight="150.0" prefWidth="366.0">
          <children>
-            <HBox fx:id="vbChildHBox11" prefHeight="150.0" prefWidth="438.0">
+            <ImageView fx:id="hbChildImage11" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/photo-1545175707-9eec1209f720.jpg" />
+               </image>
+            </ImageView>
+            <VBox fx:id="hbChildVbox2" prefHeight="150.0" prefWidth="226.0">
                <children>
-                  <ImageView fx:id="hbChildImage11" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/photo-1545175707-9eec1209f720.jpg" />
-                     </image>
-                  </ImageView>
-                  <VBox fx:id="hbChildVbox11" prefHeight="150.0" prefWidth="226.0">
-                     <children>
-                        <Label fx:id="resHotelName11" alignment="TOP_LEFT" prefHeight="47.0" prefWidth="150.0" text="Label">
-                           <font>
-                              <Font name="Kunstler Script" size="29.0" />
-                           </font></Label>
-                        <Label fx:id="resCityName11" layoutX="35.0" layoutY="115.0" prefHeight="31.0" prefWidth="145.0" text="Label" />
-                        <Rating fx:id="resHotelStars11" rating="3.5" />
-                     </children>
-                     <padding>
-                        <Insets left="25.0" />
-                     </padding>
-                  </VBox>
+                  <Label fx:id="resHotelName11" alignment="TOP_LEFT" prefHeight="47.0" prefWidth="150.0" text="Label">
+                     <font>
+                        <Font name="Kunstler Script" size="29.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="resCityName11" layoutX="35.0" layoutY="115.0" prefHeight="31.0" prefWidth="145.0" text="Label" />
+                  <Rating fx:id="resHotelStars11" rating="3.5" />
                </children>
                <padding>
-                  <Insets right="15.0" />
+                  <Insets left="25.0" />
                </padding>
-            </HBox>
+            </VBox>
          </children>
+         <padding>
+            <Insets right="15.0" />
+         </padding>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
-      </VBox>
-      <ImageView fitHeight="35.0" fitWidth="52.0" layoutX="451.0" layoutY="269.0" onMouseClicked="#goToNextPage" opacity="0.45" pickOnBounds="true" preserveRatio="true">
+      </HBox>
+      <ImageView fitHeight="35.0" fitWidth="52.0" layoutX="480.0" layoutY="269.0" onMouseClicked="#goToNextPage" opacity="0.45" pickOnBounds="true" preserveRatio="true">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -143,7 +134,7 @@
             <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/next.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="35.0" fitWidth="52.0" layoutX="14.0" layoutY="269.0" onMouseClicked="#goToPreviousPage" opacity="0.45" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+      <ImageView fitHeight="35.0" fitWidth="52.0" layoutX="15.0" layoutY="269.0" onMouseClicked="#goToPreviousPage" opacity="0.45" pickOnBounds="true" preserveRatio="true" rotate="180.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

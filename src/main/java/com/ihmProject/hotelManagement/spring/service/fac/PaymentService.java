@@ -5,16 +5,19 @@
  */
 package com.ihmProject.hotelManagement.spring.service.fac;
 
-import com.ihmProject.hotelManagement.spring.bean.Login;
-import com.ihmProject.hotelManagement.spring.bean.SignUp;
+import com.ihmProject.hotelManagement.spring.bean.Payment;
 
 /**
  *
  * @author anoir
  */
-public interface LoginService {
-
-    SignUp findByUserName(String userName);
-
-    int confirmLogin(Login login);
+public interface PaymentService  {
+    
+    int pay(Payment payment);
+    
+    //useing Luhn algorithm
+    int confirmBankingDetails(String cardNumber);
+    
+    Payment findByReference(String refernce);
+    
 }

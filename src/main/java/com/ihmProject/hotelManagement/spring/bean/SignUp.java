@@ -5,6 +5,7 @@
  */
 package com.ihmProject.hotelManagement.spring.bean;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,37 +18,49 @@ import javax.persistence.OneToOne;
  * @author anoir
  */
 @Entity
-public class Login implements Serializable {
+public class SignUp implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String userName;
-    private String rawPassword;
-    
+    private String password;
+    private byte[] passwordSlt ;
     @OneToOne
-    private SignUp signUp ;
+    private Client client;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @OneToOne(mappedBy = "signUp")
+    private Login login;
 
-    public Login() {
+    public SignUp() {
     }
 
-    public Login(Long id, String userName, String rawPassword) {
-        this.id = id;
-        this.userName = userName;
-        this.rawPassword = rawPassword;
-    }
-
-    public Login(Long id) {
-        this.id = id;
-    }
-
+    
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public byte[] getPasswordSlt() {
+        return passwordSlt;
+    }
+
+    public void setPasswordSlt(byte[] passwordSlt) {
+        this.passwordSlt = passwordSlt;
+    }
+
+ 
+
+    public Login getLogin() {
+        return login;
+    }
+
+    public void setLogin(Login login) {
+        this.login = login;
     }
 
     public String getUserName() {
@@ -58,23 +71,22 @@ public class Login implements Serializable {
         this.userName = userName;
     }
 
-    public String getRawPassword() {
-        return rawPassword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setRawPassword(String rawPassword) {
-        this.rawPassword = rawPassword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public SignUp getSignUp() {
-        return signUp;
+    public Client getClient() {
+        return client;
     }
 
-    public void setSignUp(SignUp signUp) {
-        this.signUp = signUp;
+    public void setClient(Client client) {
+        this.client = client;
     }
-
-   
+    
 
     @Override
     public int hashCode() {
@@ -86,10 +98,10 @@ public class Login implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Login)) {
+        if (!(object instanceof SignUp)) {
             return false;
         }
-        Login other = (Login) object;
+        SignUp other = (SignUp) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -98,7 +110,10 @@ public class Login implements Serializable {
 
     @Override
     public String toString() {
-        return "Login [userName=" + userName + ", rawPassword=" + rawPassword + "]";
+        return "SignUp{" + "id=" + id + ", userName=" + userName + ", password=" + password + ", client=" + client + ", login=" + login + '}';
     }
 
+    
+    
+    
 }

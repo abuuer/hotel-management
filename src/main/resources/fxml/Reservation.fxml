@@ -1,13 +1,204 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.validation.NumberValidator?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" 
-            xmlns:fx="http://javafx.com/fxml/1" 
-            fx:controller="com.ihmProject.hotelManagement.controller.ReservationController">
-    
+<AnchorPane id="AnchorPane" prefHeight="572.0" prefWidth="458.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ihmProject.hotelManagement.controller.ReservationController">
+   <children>
+      <ImageView fx:id="backGroundImage" fitHeight="673.0" fitWidth="543.0" opacity="0.21" pickOnBounds="true" AnchorPane.rightAnchor="0.0">
+         <effect>
+            <DropShadow height="255.0" radius="127.0" width="255.0" />
+         </effect>
+         <image>
+            <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/dimitry-anikin-p2Zida5fIbg-unsplash.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="firstNameLabel" layoutX="163.0" layoutY="81.0" opacity="0.84" prefHeight="27.0" prefWidth="92.0" text="First Name" AnchorPane.rightAnchor="302.0" AnchorPane.topAnchor="100.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lastNameLabel" layoutX="156.0" layoutY="129.0" opacity="0.84" prefHeight="27.0" prefWidth="92.0" text="Last Name" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="150.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="genderLebel" layoutX="183.0" layoutY="201.0" opacity="0.84" prefHeight="27.0" prefWidth="64.0" text="Gender" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="206.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="emailAdress" layoutX="137.0" layoutY="260.0" opacity="0.84" prefHeight="27.0" prefWidth="110.0" text="Email Adress" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="250.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="confirmEmailAdress" layoutX="65.0" layoutY="310.0" opacity="0.84" prefHeight="27.0" prefWidth="182.0" text="Confirm Email Adress" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="300.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="firstNameInput" layoutX="298.0" layoutY="101.0" prefHeight="25.0" prefWidth="182.0" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="101.0">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#bf1a0060" />
+                  <Stop color="#bf1a0095" offset="0.5038116680491369" />
+                  <Stop color="#bf1a00" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor></JFXTextField>
+      <JFXRadioButton fx:id="maleRadio" layoutX="288.0" layoutY="206.0" selected="true" text="Male" AnchorPane.rightAnchor="201.0" AnchorPane.topAnchor="210.0">
+         <toggleGroup>
+            <ToggleGroup fx:id="gender" />
+         </toggleGroup></JFXRadioButton>
+      <JFXRadioButton fx:id="femaleRadio" layoutX="382.0" layoutY="206.0" text="Female" toggleGroup="$gender" AnchorPane.topAnchor="210.0" />
+      <Label fx:id="age" layoutX="156.0" layoutY="389.0" opacity="0.84" prefHeight="27.0" prefWidth="36.0" text="Age" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="350.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="adress" alignment="CENTER_RIGHT" layoutX="179.0" layoutY="402.0" opacity="0.84" prefHeight="27.0" prefWidth="64.0" text="Adress" textAlignment="RIGHT" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="400.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="specialRequests" alignment="CENTER_RIGHT" layoutX="189.0" layoutY="412.0" opacity="0.84" prefHeight="27.0" prefWidth="171.0" text="Special Requests" textAlignment="RIGHT" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="450.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXTextArea fx:id="specialRequestsInput" layoutX="291.0" layoutY="464.0" prefHeight="99.0" prefWidth="182.0" promptText="Type your requests in English here – we'll share them with the hotel.Special requests cannot be guaranteed – but the hotel will do its best to meet your needs." AnchorPane.rightAnchor="63.0">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#a84b40" />
+                  <Stop color="#a84b40" offset="0.21455938697318006" />
+                  <Stop color="#c22a10b1" offset="0.577319587628866" />
+                  <Stop color="#c32a0f" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor>
+      </JFXTextArea>
+      <JFXButton fx:id="submitButton" layoutX="389.0" layoutY="616.0" onAction="#getClientDetails" opacity="0.82" prefHeight="30.0" prefWidth="92.0" style="-fx-background-color: #ffa270;" text="SUBMIT" textFill="WHITE">
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="0.9142857142857143" startX="0.17619047619047618" startY="0.15714285714285714">
+               <stops>
+                  <Stop color="#c21a00de" />
+                  <Stop color="#c21a0090" offset="0.7285223367697594" />
+                  <Stop color="#c21a0027" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label opacity="0.44" prefHeight="119.0" prefWidth="543.0" text="La Vida é Bella Afency">
+         <font>
+            <Font name="Kunstler Script" size="72.0" />
+         </font>
+         <textFill>
+            <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="0.7571428571428571">
+               <stops>
+                  <Stop color="#ab472982" />
+                  <Stop color="#f7d71e" offset="0.4789272030651336" />
+                  <Stop color="#ad2b00b8" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <NumberValidator />
+      <Label layoutX="291.0" layoutY="377.0" prefHeight="17.0" prefWidth="92.0" text="*Enter a number" textFill="#db0000f5" />
+      <Label layoutX="291.0" layoutY="277.0" prefHeight="17.0" prefWidth="110.0" text="*Enter a valid email" textFill="#db0000f5" />
+      <Label layoutX="291.0" layoutY="328.0" prefHeight="17.0" prefWidth="110.0" text="*Emails don't match" textFill="#db0000f5" />
+      <Label layoutX="291.0" layoutY="177.0" prefHeight="17.0" prefWidth="123.0" text="*This field is required" textFill="#db0000f5" />
+      <JFXTextField fx:id="adressInput" layoutX="298.0" layoutY="92.0" prefHeight="25.0" prefWidth="182.0" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="400.0">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#bf1a0060" />
+                  <Stop color="#bf1a0095" offset="0.5038116680491369" />
+                  <Stop color="#bf1a00" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor>
+      </JFXTextField>
+      <JFXTextField fx:id="emaillAdressConfInput" layoutX="298.0" layoutY="92.0" prefHeight="25.0" prefWidth="182.0" AnchorPane.topAnchor="300.0">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#bf1a0060" />
+                  <Stop color="#bf1a0095" offset="0.5038116680491369" />
+                  <Stop color="#bf1a00" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor>
+      </JFXTextField>
+      <JFXTextField fx:id="emaillAdressInput" layoutX="298.0" layoutY="92.0" prefHeight="25.0" prefWidth="182.0" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="250.0">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#bf1a0060" />
+                  <Stop color="#bf1a0095" offset="0.5038116680491369" />
+                  <Stop color="#bf1a00" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor>
+      </JFXTextField>
+      <JFXTextField fx:id="lastNameInput" layoutX="298.0" layoutY="92.0" prefHeight="25.0" prefWidth="182.0" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="150.0">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#bf1a0060" />
+                  <Stop color="#bf1a0095" offset="0.5038116680491369" />
+                  <Stop color="#bf1a00" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor>
+      </JFXTextField>
+      <JFXTextField fx:id="ageInput" layoutX="300.0" layoutY="351.0" prefHeight="25.0" prefWidth="92.0" AnchorPane.topAnchor="350.0">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#bf1a0060" />
+                  <Stop color="#bf1a0095" offset="0.5038116680491369" />
+                  <Stop color="#bf1a00" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor>
+      </JFXTextField>
+      <JFXButton fx:id="gobackbtn" layoutX="61.0" layoutY="616.0" onAction="#goBackTosearch" opacity="0.82" prefHeight="30.0" prefWidth="132.0" style="-fx-background-color: #ffa270;" text="GO BACK TO SEARCH" textFill="WHITE">
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="0.9142857142857143" startX="0.17619047619047618" startY="0.15714285714285714">
+               <stops>
+                  <Stop color="#c21a00de" />
+                  <Stop color="#c21a0090" offset="0.7285223367697594" />
+                  <Stop color="#c21a0027" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXTextArea fx:id="errorText" editable="false" focusColor="#a84040" layoutX="61.0" layoutY="568.0" prefHeight="41.0" prefWidth="444.0" text="There has been a problem with the informations you provided, please go back and confirm your informations !" unFocusColor="#dd0101">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </JFXTextArea>
+   </children>
 </AnchorPane>

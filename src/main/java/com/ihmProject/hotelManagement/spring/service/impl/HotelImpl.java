@@ -17,8 +17,8 @@ import org.springframework.stereotype.Service;
  * @author anoir
  */
 @Service
-public class HotelImpl implements HotelService{
-    
+public class HotelImpl implements HotelService {
+
     @Autowired
     private HotelRepository hotelRepository;
 
@@ -28,7 +28,7 @@ public class HotelImpl implements HotelService{
     }
 
     @Override
-    public List<Hotel> findByName(String name) {
+    public Hotel findByName(String name) {
         return hotelRepository.findByName(name);
     }
 
@@ -45,8 +45,8 @@ public class HotelImpl implements HotelService{
     @Override
     public int deleteByReference(String reference) {
         Hotel foundedHotel = hotelRepository.findByReference(reference);
-        if(foundedHotel == null){
-            return -1 ;
+        if (foundedHotel == null) {
+            return -1;
         } else {
             hotelRepository.deleteByReference(reference);
             return 1;
@@ -55,9 +55,9 @@ public class HotelImpl implements HotelService{
 
     @Override
     public int save(Hotel hotel) {
-         Hotel foundedHotel = hotelRepository.findByReference(hotel.getReference());
-        if(foundedHotel != null){
-            return -1 ;
+        Hotel foundedHotel = hotelRepository.findByReference(hotel.getReference());
+        if (foundedHotel != null) {
+            return -1;
         } else {
             hotelRepository.save(hotel);
             return 1;
@@ -69,5 +69,4 @@ public class HotelImpl implements HotelService{
         return hotelRepository.findAll();
     }
 
-   
 }
