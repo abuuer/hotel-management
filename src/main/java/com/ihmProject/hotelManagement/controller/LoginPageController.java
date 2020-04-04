@@ -110,5 +110,17 @@ public class LoginPageController implements Initializable {
         stage.show();
         stage.setResizable(false);
     }
-
+    public void goToRegister(ActionEvent event) throws IOException {
+    	loginRegisterButton.getScene().getWindow().hide();
+        FxWeaver fxWeaver = JavaFxApplication.applicationContext.getBean(FxWeaver.class
+        );
+        Parent root = fxWeaver.loadView(SignupController.class
+        );
+        Scene scene = new Scene(root);
+        JavaFxApplication.newStage.setScene(scene);
+        JavaFxApplication.newStage.show();
+        JavaFxApplication.newStage.setResizable(false);
+    }
+    
+    
 }
