@@ -17,8 +17,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="412.0" prefWidth="710.0" style="-fx-background-color: #fdfbc4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="412.0" prefWidth="710.0" style="-fx-background-color: #fdfbc4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ihmProject.hotelManagement.controller.SignupController">
    <children>
       <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="351.0" prefWidth="700.0" style="-fx-background-color: #fdfbc4;">
          <children>
