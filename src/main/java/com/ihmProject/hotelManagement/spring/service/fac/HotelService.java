@@ -16,7 +16,7 @@ public interface HotelService {
 
     List<Hotel> findByCity(String city);
 
-    List<Hotel> findByName(String name);
+    Hotel findByName(String name);
 
     List<Hotel> findByStars(String stars);
 

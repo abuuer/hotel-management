@@ -5,8 +5,7 @@
  */
 package com.ihmProject.hotelManagement.spring.repository;
 
-import com.ihmProject.hotelManagement.spring.bean.Reservation;
-import java.util.Date;
+import com.ihmProject.hotelManagement.spring.bean.Login;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,14 +14,8 @@ import org.springframework.stereotype.Repository;
  * @author anoir
  */
 @Repository
-public interface ReservationRepository extends JpaRepository<Reservation, Long> {
+public interface LoginRepository extends JpaRepository<Login, Long> {
 
-    Reservation findByReference(String reference);
-//
-//    Reservation findBycheckIn(Date checkIn);
-//
-//    Reservation findBycheckOut(Date checkOut);
-
-    Reservation findByClientCode(String clientCode);
+    Login findByUserName(String userName);
 
 }

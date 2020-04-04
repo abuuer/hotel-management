@@ -3,12 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ihmProject.hotelManagement.spring.service.fac;
+package com.ihmProject.hotelManagement.controller;
+
+import net.rgielen.fxweaver.core.FxmlView;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author anoir
  */
-public interface RoomService  {
+@Component
+@FxmlView("/fxml/Payment.fxml")
+public class PaymentController {
     
 }

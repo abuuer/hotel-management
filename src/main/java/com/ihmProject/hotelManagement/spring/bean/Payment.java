@@ -6,10 +6,12 @@
 package com.ihmProject.hotelManagement.spring.bean;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -22,15 +24,63 @@ public class Payment implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private String reference ;
+    private String cardNumber ;
+    private String cardCVC ;
+    private String expDate;
+    private String nameOnCard ;
 
     public Long getId() {
         return id;
+        
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
+    public String getReference() {
+        return reference;
+    }
+
+    public void setReference(String reference) {
+        this.reference = reference;
+    }
+    
+
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    public String getCardCVC() {
+        return cardCVC;
+    }
+
+    public void setCardCVC(String cardCVC) {
+        this.cardCVC = cardCVC;
+    }
+
+    public String getExpDate() {
+        return expDate;
+    }
+
+    public void setExpDate(String expDate) {
+        this.expDate = expDate;
+    }
+
+    public String getNameOnCard() {
+        return nameOnCard;
+    }
+
+    public void setNameOnCard(String nameOnCard) {
+        this.nameOnCard = nameOnCard;
+    }
+
+    
     @Override
     public int hashCode() {
         int hash = 0;

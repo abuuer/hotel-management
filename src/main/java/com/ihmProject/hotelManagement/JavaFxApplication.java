@@ -5,6 +5,9 @@
  */
 package com.ihmProject.hotelManagement;
 
+import com.ihmProject.hotelManagement.spring.bean.Client;
+import com.ihmProject.hotelManagement.spring.bean.Hotel;
+import com.ihmProject.hotelManagement.spring.bean.Reservation;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Parent;
@@ -20,7 +23,12 @@ import org.springframework.context.ConfigurableApplicationContext;
  */
 public class JavaFxApplication extends Application {
 
-    ConfigurableApplicationContext applicationContext;
+    public static ConfigurableApplicationContext applicationContext;
+    public static Stage newStage ; 
+    public static String chosenCity ; 
+    public static Hotel chosenHotel = new Hotel(); 
+    public static Reservation reservation = new Reservation() ;
+    public static Client client = new Client();
 
     //this is where the spring starts
     @Override
@@ -39,11 +47,13 @@ public class JavaFxApplication extends Application {
 
     //this is where the javaFX
     @Override
-    public void start(Stage stage) {
+    public void start(final Stage stage) {
+    	JavaFxApplication.newStage = stage ;
         FxWeaver fxWeaver = applicationContext.getBean(FxWeaver.class);
         Parent root = fxWeaver.loadView(MainPageController.class);
         Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        JavaFxApplication.newStage.setScene(scene);
+        JavaFxApplication.newStage.show();
+        JavaFxApplication.newStage.setResizable(false);
     }
 }

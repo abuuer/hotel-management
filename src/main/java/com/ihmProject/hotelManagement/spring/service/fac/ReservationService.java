@@ -5,10 +5,22 @@
  */
 package com.ihmProject.hotelManagement.spring.service.fac;
 
+import com.ihmProject.hotelManagement.spring.bean.Reservation;
+import java.util.Date;
+
 /**
  *
  * @author anoir
  */
-public interface ReservationService  {
+public interface ReservationService {
+
+    Reservation findByReference(String reference);
+//
+//    Reservation findByCheckIn(Date checkIn);
+//
+//    Reservation findByCheckOut(Date checkOut);
+
+    Reservation findByClientCode(String clientCode);
     
+    int save(Reservation reservation);
 }
