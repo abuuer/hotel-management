@@ -37,7 +37,7 @@ public class JavaFxApplication extends Application {
         Platform.exit();
     }
 
-    //this is where the javaFcX
+    //this is where the javaFX
     @Override
     public void start(Stage stage) {
         FxWeaver fxWeaver = applicationContext.getBean(FxWeaver.class);
