@@ -2,12 +2,10 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXPasswordField?>
-<?import com.jfoenix.controls.JFXProgressBar?>
-<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.effect.BoxBlur?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -21,7 +19,7 @@
    <children>
       <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="351.0" prefWidth="700.0" style="-fx-background-color: #fdfbc4;">
          <children>
-            <ImageView fitHeight="435.0" fitWidth="301.0" layoutX="25.0" layoutY="6.0" opacity="0.11" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="435.0" fitWidth="301.0" layoutX="14.0" layoutY="6.0" opacity="0.11" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/photo-1545175707-9eec1209f720.jpg" />
                </image>
@@ -34,7 +32,7 @@
                   <BoxBlur height="68.75" iterations="3" width="90.0" />
                </effect>
             </ImageView>
-            <Line endX="25.0" endY="262.0" layoutX="325.0" layoutY="127.0" startX="26.0" startY="-127.0" style="-fx-cursor: #4b636e;">
+            <Line endX="25.0" endY="262.0" layoutX="325.0" layoutY="127.0" startX="26.5" startY="-62.99998474121094" style="-fx-cursor: #4b636e;">
                <stroke>
                   <LinearGradient endX="1.0" endY="0.8952380952380953" startX="0.6428571428571429">
                      <stops>
@@ -47,7 +45,7 @@
                   </LinearGradient>
                </stroke>
             </Line>
-            <Label layoutX="24.0" layoutY="129.0" prefHeight="50.0" prefWidth="305.0" text="La Vida é Bella Agency">
+            <Label layoutX="24.0" layoutY="112.0" prefHeight="50.0" prefWidth="305.0" text="La Vida é Bella Agency">
                <font>
                   <Font name="Kunstler Script" size="40.0" />
                </font>
@@ -61,18 +59,7 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <JFXTextField fx:id="loginUsernameLabel" labelFloat="true" layoutX="458.0" layoutY="191.0" promptText="Location" unFocusColor="#c236366a">
-               <focusColor>
-                  <LinearGradient endX="1.0" endY="0.9142857142857143" startX="0.3" startY="0.15714285714285714">
-                     <stops>
-                        <Stop color="#c21a0066" />
-                        <Stop color="#c21a008f" offset="0.7285223367697594" />
-                        <Stop color="#bf1a00f0" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </focusColor>
-            </JFXTextField>
-            <JFXPasswordField fx:id="loginPasswordLabel" labelFloat="true" layoutX="458.0" layoutY="141.0" promptText="Password" unFocusColor="#c236364b">
+            <JFXPasswordField fx:id="loginPasswordLabel" labelFloat="true" layoutX="458.0" layoutY="178.0" promptText="Password" unFocusColor="#c236364b">
                <focusColor>
                   <LinearGradient endX="1.0" endY="1.0" startX="0.3" startY="0.15714285714285714">
                      <stops>
@@ -96,12 +83,12 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="415.0" layoutY="88.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="415.0" layoutY="125.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../java/com/ihmProject/hotelManagement/assets/icons/2x/round_person_black_18dp.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="415.0" layoutY="142.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="415.0" layoutY="179.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../java/com/ihmProject/hotelManagement/assets/icons/2x/round_vpn_key_black_18dp.png" />
                </image>
@@ -123,7 +110,6 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXProgressBar fx:id="loginProgress" layoutX="427.0" layoutY="343.0" />
             <JFXButton fx:id="registerBackToSearchBtn" layoutX="100.0" layoutY="271.0" onAction="#backToSearchAction" opacity="0.82" prefHeight="30.0" prefWidth="152.0" style="-fx-background-color: #ffa270;" text="GO BACK TO SEARCH" textFill="WHITE">
                <ripplerFill>
                   <LinearGradient endX="1.0" endY="0.9142857142857143" startX="0.17619047619047618" startY="0.15714285714285714">
@@ -138,7 +124,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXTextField fx:id="loginUsernameLabel1" labelFloat="true" layoutX="458.0" layoutY="87.0" promptText="Username" unFocusColor="#c236366a">
+            <JFXTextField fx:id="loginUsernameLabel" labelFloat="true" layoutX="458.0" layoutY="124.0" promptText="Username" unFocusColor="#c236366a">
                <focusColor>
                   <LinearGradient endX="1.0" endY="0.9142857142857143" startX="0.3" startY="0.15714285714285714">
                      <stops>
@@ -149,28 +135,25 @@
                   </LinearGradient>
                </focusColor>
             </JFXTextField>
-            <JFXRadioButton layoutX="458.0" layoutY="253.0" selected="true" text="Male">
-               <toggleGroup>
-                  <ToggleGroup fx:id="Gender" />
-               </toggleGroup>
-            </JFXRadioButton>
-            <JFXRadioButton layoutX="541.0" layoutY="253.0" text="Female" toggleGroup="$Gender" />
-            <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="415.0" layoutY="192.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
+            <JFXPasswordField fx:id="loginPasswordLabel1" labelFloat="true" layoutX="458.0" layoutY="234.0" promptText="Confirm password" unFocusColor="#c236364b">
+               <focusColor>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.3" startY="0.15714285714285714">
+                     <stops>
+                        <Stop color="#c21a0058" />
+                        <Stop color="#c41c00" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </focusColor>
+            </JFXPasswordField>
+            <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="415.0" layoutY="235.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../Pictures/location.png" />
+                  <Image url="@../../java/com/ihmProject/hotelManagement/assets/icons/2x/round_vpn_key_black_18dp.png" />
                </image>
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="415.0" layoutY="250.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../Pictures/GenderSymbol004-512.png" />
-               </image>
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor>
-            </ImageView>
+            <JFXTextArea fx:id="errorText" focusColor="#f52f1d" layoutX="415.0" layoutY="339.0" prefHeight="30.0" prefWidth="292.0" text="      Please enter each field correctly" unFocusColor="#d31717" />
          </children>
       </AnchorPane>
    </children>

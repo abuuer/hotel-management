@@ -5,6 +5,7 @@
  */
 package com.ihmProject.hotelManagement.spring.service.fac;
 
+
 import com.ihmProject.hotelManagement.spring.bean.SignUp;
 import java.util.List;
 
@@ -19,4 +20,5 @@ public interface SignupService {
     SignUp findByUserName(String userName);
     
     List<SignUp> findAll();
+    
 }

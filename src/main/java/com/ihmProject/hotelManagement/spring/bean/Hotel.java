@@ -35,8 +35,8 @@ public class Hotel implements Serializable {
     private String image ;
     @OneToMany(mappedBy = "hotel")
     private List<Reservation> reservations;
-    @OneToMany(mappedBy = "hotel")
-    private List<Room> rooms;
+   //@OneToMany(mappedBy = "hotel")
+    //private List<Room> rooms;
 
     public Hotel() {
     }
@@ -78,13 +78,13 @@ public class Hotel implements Serializable {
         this.reservations = reservations;
     }
 
-    public List<Room> getRooms() {
+   /* public List<Room> getRooms() {
         return rooms;
     }
 
     public void setRooms(List<Room> rooms) {
         this.rooms = rooms;
-    }
+    }*/
 
     public String getCity() {
         return city;
