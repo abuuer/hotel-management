@@ -6,6 +6,8 @@ package com.ihmProject.hotelManagement.controller;
  * and open the template in the editor.
  */
 import com.ihmProject.hotelManagement.JavaFxApplication;
+import com.ihmProject.hotelManagement.MainPageController;
+
 import static com.ihmProject.hotelManagement.MainPageController.generateRandomReference;
 import com.ihmProject.hotelManagement.spring.service.impl.ReservationImpl;
 import com.jfoenix.controls.JFXButton;
@@ -125,7 +127,7 @@ public class ReservationController implements Initializable {
     public void goBackTosearch(ActionEvent event) throws IOException {
         firstNameInput.getScene().getWindow().hide();
         FxWeaver fxWeaver = JavaFxApplication.applicationContext.getBean(FxWeaver.class);
-        Parent root = fxWeaver.loadView(ResultsPageController.class);
+        Parent root = fxWeaver.loadView(MainPageController.class);
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);

@@ -6,7 +6,13 @@
 package com.ihmProject.hotelManagement.spring.repository;
 
 import com.ihmProject.hotelManagement.spring.bean.Reservation;
+
+import javafx.collections.ObservableList;
+
 import java.util.Date;
+import java.util.List;
+import java.util.Observable;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -24,5 +30,5 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
 //    Reservation findBycheckOut(Date checkOut);
 
     Reservation findByClientCode(String clientCode);
-
+    List<Reservation> findByUserName (String userName);
 }

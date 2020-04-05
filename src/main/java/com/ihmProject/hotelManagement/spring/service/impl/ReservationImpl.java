@@ -12,7 +12,12 @@ import com.ihmProject.hotelManagement.spring.repository.ReservationRepository;
 import com.ihmProject.hotelManagement.spring.service.fac.ClientService;
 import com.ihmProject.hotelManagement.spring.service.fac.HotelService;
 import com.ihmProject.hotelManagement.spring.service.fac.ReservationService;
+
+import javafx.collections.ObservableList;
+
 import java.util.Date;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -66,6 +71,17 @@ public class ReservationImpl implements ReservationService {
             reservationRepository.save(reservation);
             return 1;
         }
-    }
+    
+
+	
+	}
+
+	@Override
+	public List<Reservation> findByUserName(String userName) {
+		
+		return reservationRepository.findByUserName(userName);
+	}
+    
+   
 
 }

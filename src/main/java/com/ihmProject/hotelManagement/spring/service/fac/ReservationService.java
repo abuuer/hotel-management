@@ -5,8 +5,14 @@
  */
 package com.ihmProject.hotelManagement.spring.service.fac;
 
+
+
+import java.util.List;
+import java.util.Observable;
+
 import com.ihmProject.hotelManagement.spring.bean.Reservation;
-import java.util.Date;
+
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -23,4 +29,7 @@ public interface ReservationService {
     Reservation findByClientCode(String clientCode);
     
     int save(Reservation reservation);
+    List<Reservation> findByUserName (String userName);
+    
+    
 }

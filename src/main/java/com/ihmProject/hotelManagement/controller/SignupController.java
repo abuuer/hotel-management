@@ -12,18 +12,17 @@ import com.ihmProject.hotelManagement.spring.bean.SignUp;
 import com.ihmProject.hotelManagement.spring.service.impl.SignUpImpl;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
-import com.jfoenix.controls.JFXProgressBar;
+
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 
-import javafx.animation.PauseTransition;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
 
@@ -42,8 +41,8 @@ public class SignupController implements Initializable {
 	    @FXML
 	    private JFXButton loginRegisterButton;
 
-	    @FXML
-	    private JFXButton registerBackToSearchBtn;
+	    //@FXML
+	    //private JFXButton registerBackToSearchBtn;
 
 	    @FXML
 	    private JFXTextField loginUsernameLabel;
@@ -56,6 +55,7 @@ public class SignupController implements Initializable {
 	   
 	    
 	    private SignUpImpl signUpService ; 
+	    
 	    
 	    @Autowired
 	    public SignupController(SignUpImpl signUpImpl) {
@@ -111,7 +111,7 @@ public class SignupController implements Initializable {
 	    		        stage.setResizable(false);
 	    }
 	    
-	    @FXML
+	   /* @FXML
 	    void backToSearchAction(ActionEvent event) {
 	    	registerBackToSearchBtn.getScene().getWindow().hide();
 	    	  FxWeaver fxWeaver = JavaFxApplication.applicationContext.getBean(FxWeaver.class
@@ -123,6 +123,6 @@ public class SignupController implements Initializable {
 	    		        stage.setScene(scene);
 	    		        stage.show();
 	    		        stage.setResizable(false);
-	    }
+	    }*/
 		
 }
