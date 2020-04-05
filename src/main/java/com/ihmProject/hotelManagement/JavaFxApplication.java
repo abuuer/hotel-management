@@ -5,7 +5,6 @@
  */
 package com.ihmProject.hotelManagement;
 
-import com.ihmProject.hotelManagement.controller.SearchController;
 import com.ihmProject.hotelManagement.spring.bean.Client;
 import com.ihmProject.hotelManagement.spring.bean.Hotel;
 import com.ihmProject.hotelManagement.spring.bean.Login;
@@ -18,6 +17,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import net.rgielen.fxweaver.core.FxWeaver;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.ConfigurableApplicationContext;
 
 /**
  *
@@ -34,9 +35,6 @@ public class JavaFxApplication extends Application {
     public static SignUp signUp = new SignUp();
     public static Client client = new Client();
     public static Payment payment = new Payment();
-    //edit : add this
-    public static SignUp signUp = new SignUp();
-    public static Login login = new Login();
 
     //this is where the spring starts
     @Override

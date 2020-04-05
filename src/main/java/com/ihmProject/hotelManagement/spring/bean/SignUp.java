@@ -28,9 +28,6 @@ public class SignUp implements Serializable {
     private String password;
     private byte[] passwordSlt;
 
-    @OneToOne
-    private Login login;
-
     public SignUp() {
     }
 
@@ -40,14 +37,6 @@ public class SignUp implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Login getLogin() {
-        return login;
-    }
-
-    public void setLogin(Login login) {
-        this.login = login;
     }
 
     public byte[] getPasswordSlt() {

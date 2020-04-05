@@ -30,5 +30,4 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
 //    Reservation findBycheckOut(Date checkOut);
 
     Reservation findByClientCode(String clientCode);
-    List<Reservation> findByUserName (String userName);
 }

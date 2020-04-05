@@ -146,7 +146,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label alignment="TOP_CENTER" layoutX="92.0" layoutY="126.0" text="Card Number*  : " AnchorPane.rightAnchor="438.0">
+      <Label alignment="TOP_CENTER" layoutX="92.0" layoutY="126.0" text="Full Name*  : " AnchorPane.rightAnchor="438.0">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

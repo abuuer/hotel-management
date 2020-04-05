@@ -72,17 +72,7 @@ public class ReservationImpl implements ReservationService {
             reservationRepository.save(reservation);
             return 1;
         }
-    
-
 	
 	}
-
-	@Override
-	public List<Reservation> findByUserName(String userName) {
-		
-		return reservationRepository.findByUserName(userName);
-	}
-    
-   
 
 }

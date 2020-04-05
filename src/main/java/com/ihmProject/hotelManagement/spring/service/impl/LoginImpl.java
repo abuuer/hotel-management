@@ -77,12 +77,8 @@ public class LoginImpl implements LoginService {
         Login fLogin = loginRepository.findByUserName(login.getUserName());
         SignUp fSignUp = signupService.findByUserName(login.getSignUp().getUserName());
         if (fLogin != null) {
-            login.getSignUp().setLogin(fLogin);
-            signupService.save(login.getSignUp());
             return -1;
         } else {
-            login.getSignUp().setLogin(login);
-            signupService.save(login.getSignUp());
             loginRepository.save(login);
             return 1;
         }
