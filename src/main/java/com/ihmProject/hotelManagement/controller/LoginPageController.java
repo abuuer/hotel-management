@@ -53,9 +53,6 @@ public class LoginPageController implements Initializable {
     private JFXButton loginRegisterButton;
 
     @FXML
-    private JFXProgressBar loginProgress;
-
-    @FXML
     private Label loginIncorrectPswrd;
 
     private LoginImpl login;
@@ -64,7 +61,6 @@ public class LoginPageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        loginProgress.setVisible(false);
         loginIncorrectPswrd.setVisible(false);
     }
 
@@ -73,15 +69,8 @@ public class LoginPageController implements Initializable {
     }
 
     public void connect(ActionEvent event) throws IOException {
-        System.out.println("Connect clicked");
-        loginProgress.setVisible(true);
-        PauseTransition pt = new PauseTransition();
-        pt.setDuration(Duration.seconds(3));
-        String d = loginUsernameLabel.getText();
+            String d = loginUsernameLabel.getText();
         foundedUser = login.findByUserName(d);
-        pt.setOnFinished(e -> {
-
-        });
         int res = login.confirmLogin(userLogin);
         try {
             if (res == 1) {

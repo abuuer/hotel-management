@@ -12,13 +12,14 @@ import com.ihmProject.hotelManagement.spring.bean.Reservation;
 import com.ihmProject.hotelManagement.spring.service.impl.HotelImpl;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXProgressBar;
 import com.jfoenix.controls.JFXSlider;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
-
+import javafx.animation.PauseTransition;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -28,6 +29,7 @@ import javafx.scene.control.Label;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.util.Duration;
 import org.springframework.stereotype.Component;
 
 import net.rgielen.fxweaver.core.FxWeaver;
@@ -68,7 +70,7 @@ public class MainPageController implements Initializable {
     private ObservableList<String> data;
     public ConfigurableApplicationContext applicationContext;
     private HotelImpl hotel;
-    
+
     @Autowired
     public MainPageController(HotelImpl hotel) {
         this.hotel = hotel;
@@ -89,16 +91,20 @@ public class MainPageController implements Initializable {
 
     public void switchToReserch(ActionEvent event) throws IOException {
         System.out.println(checkInDate.getValue());
-        System.out.println((int)numberAdults.getValue());
+        System.out.println((int) numberAdults.getValue());
         System.out.println(generateRandomReference());
         JavaFxApplication.reservation.setCheckIn(checkInDate.getValue());
         JavaFxApplication.reservation.setCheckOut(checkOutDate.getValue());
-        JavaFxApplication.reservation.setNumberOfAdults((int)numberAdults.getValue());
-        JavaFxApplication.reservation.setNumberOfChilds((int)numberChildren.getValue());
-        JavaFxApplication.reservation.setNumberOfRooms((int)numberRooms.getValue());
+        JavaFxApplication.reservation.setNumberOfAdults((int) numberAdults.getValue());
+        JavaFxApplication.reservation.setNumberOfChilds((int) numberChildren.getValue());
+        JavaFxApplication.reservation.setNumberOfRooms((int) numberRooms.getValue());
         JavaFxApplication.reservation.setReference(generateRandomReference());
-        try {
-            //cmBoxCitiesSearch.getScene().getWindow().hide();
+        if (cmBoxCitiesSearch.getValue() == null) {
+            searchError.setVisible(true);
+        } else if (checkInDate.getValue() == null || checkOutDate.getValue() == null) {
+            searchError.setVisible(true);
+        } else {
+            cmBoxCitiesSearch.getScene().getWindow().hide();
             JavaFxApplication.chosenCity = this.cmBoxCitiesSearch.getValue().toString();
             FxWeaver fxWeaver = JavaFxApplication.applicationContext.getBean(FxWeaver.class);
             Parent root = fxWeaver.loadView(ResultsPageController.class);
@@ -106,8 +112,6 @@ public class MainPageController implements Initializable {
             JavaFxApplication.newStage.setScene(scene);
             JavaFxApplication.newStage.show();
             JavaFxApplication.newStage.setResizable(true);
-        } catch (NullPointerException e) {
-            searchError.setVisible(true);
         }
 
     }

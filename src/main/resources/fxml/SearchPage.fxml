@@ -18,18 +18,18 @@
     <children>
         <ImageView fitHeight="582.0" fitWidth="474.0" layoutX="-14.0" layoutY="-10.0" opacity="0.36" pickOnBounds="true">
             <image>
-                <Image url="@../../java/com/ihmProject/hotelManagement/assets/photo-1561552919-3566c97a3a2c.jpg" />
+                <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/photo-1561552919-3566c97a3a2c.jpg" />
             </image>
         </ImageView>
-        <JFXComboBox fx:id="cmBoxCitiesSearch" editable="true" focusColor="#009688" layoutX="117.0" layoutY="148.0" prefHeight="25.0" prefWidth="167.0" promptText="Where are you going ?" visibleRowCount="5" />
-        <JFXDatePicker fx:id="checkInDate" layoutX="118.0" layoutY="238.0" prefHeight="28.0" prefWidth="124.0" promptText="Check in" AnchorPane.topAnchor="238.0" />
+        <JFXComboBox fx:id="cmBoxCitiesSearch" editable="true" focusColor="#009688" layoutX="117.0" layoutY="148.0" prefHeight="25.0" prefWidth="167.0" promptText="Where are you going ?*" visibleRowCount="5" />
+        <JFXDatePicker fx:id="checkInDate" layoutX="118.0" layoutY="238.0" prefHeight="28.0" prefWidth="124.0" promptText="Check in*" AnchorPane.topAnchor="238.0" />
         <Label layoutX="124.0" layoutY="348.0" text="Adults" AnchorPane.leftAnchor="124.0" AnchorPane.topAnchor="345.0">
             <font>
                 <Font size="15.0" />
             </font>
         </Label>
         <JFXSnackbar layoutX="369.0" layoutY="438.0" />
-        <JFXDatePicker fx:id="checkOutDate" layoutX="118.0" layoutY="281.0" prefHeight="28.0" prefWidth="124.0" promptText="Check out" AnchorPane.leftAnchor="118.0" AnchorPane.topAnchor="281.0" />
+        <JFXDatePicker fx:id="checkOutDate" layoutX="118.0" layoutY="281.0" prefHeight="28.0" prefWidth="124.0" promptText="Check out*" AnchorPane.leftAnchor="118.0" AnchorPane.topAnchor="281.0" />
         <Label layoutX="124.0" layoutY="387.0" text="Childrens" AnchorPane.leftAnchor="124.0" AnchorPane.topAnchor="380.0">
             <font>
                 <Font size="15.0" />
@@ -40,7 +40,7 @@
                 <Font size="15.0" />
             </font>
         </Label>
-        <JFXButton layoutX="124.0" layoutY="485.0" onAction="#switchToReserch" prefHeight="30.0" prefWidth="152.0" style="-fx-background-color: #ffa270;" text="SEARCH" textFill="WHITE">
+        <JFXButton layoutX="154.0" layoutY="486.0" onAction="#switchToReserch" prefHeight="30.0" prefWidth="152.0" style="-fx-background-color: #ffa270;" text="SEARCH" textFill="WHITE">
             <ripplerFill>
                 <LinearGradient endX="1.0" endY="0.9142857142857143" startX="0.17619047619047618" startY="0.15714285714285714">
                     <stops>
@@ -68,7 +68,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <Label fx:id="searchError" layoutX="124.0" layoutY="185.0" prefHeight="17.0" prefWidth="167.0" text="*Select a city">
+      <Label fx:id="searchError" layoutX="123.0" layoutY="456.0" prefHeight="17.0" prefWidth="167.0" text="*A required field is empty!">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -79,8 +79,8 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <JFXSlider fx:id="numberAdults" blockIncrement="1.0" layoutX="206.0" layoutY="349.0" majorTickUnit="23.0" max="25.0" value="10.0" />
-      <JFXSlider fx:id="numberChildren" blockIncrement="1.0" layoutX="206.0" layoutY="384.0" max="25.0" value="10.0" />
-      <JFXSlider fx:id="numberRooms" blockIncrement="1.0" layoutX="206.0" layoutY="419.0" max="25.0" minorTickCount="0" value="10.0" />
+      <JFXSlider fx:id="numberAdults" blockIncrement="1.0" layoutX="206.0" layoutY="349.0" majorTickUnit="23.0" max="25.0" value="1.0" />
+      <JFXSlider fx:id="numberChildren" blockIncrement="1.0" layoutX="206.0" layoutY="384.0" max="25.0" value="1.0" />
+      <JFXSlider fx:id="numberRooms" blockIncrement="1.0" layoutX="206.0" layoutY="419.0" max="25.0" minorTickCount="0" value="1.0" />
     </children>
 </AnchorPane>

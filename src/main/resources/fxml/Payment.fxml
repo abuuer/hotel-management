@@ -1,13 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" 
-            xmlns:fx="http://javafx.com/fxml/1" 
-            fx:controller="com.ihmProject.hotelManagement.controller.PaymentController">
-    
+<AnchorPane id="AnchorPane" prefHeight="309.0" prefWidth="637.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ihmProject.hotelManagement.controller.PaymentController">
+   <children>
+      <ImageView fitHeight="424.0" fitWidth="637.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/ryan-born-x8i6FfaZAbs-unsplash.jpg" />
+         </image>
+      </ImageView>
+      <Label alignment="TOP_CENTER" layoutX="80.0" layoutY="171.0" text="Card Number*  : " AnchorPane.rightAnchor="438.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_CENTER" layoutX="65.0" layoutY="240.0" text="Experation Date*  :" AnchorPane.rightAnchor="438.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_CENTER" layoutX="345.0" layoutY="240.0" text="CVC* :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="cardNumberInput" layoutX="241.0" layoutY="169.0" prefHeight="25.0" prefWidth="136.0" promptText="XXXX XXXX XXXX XXXX" unFocusColor="BLACK" AnchorPane.leftAnchor="242.0">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#9c2f1137" />
+                  <Stop color="#8f0e0ea6" offset="0.5257731958762887" />
+                  <Stop color="#900d0d" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor>
+      </JFXTextField>
+      <JFXTextField fx:id="expDateInput" layoutX="240.0" layoutY="238.0" prefHeight="25.0" prefWidth="47.0" promptText="MM/YY" unFocusColor="BLACK" AnchorPane.leftAnchor="242.0">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#9c2f1137" />
+                  <Stop color="#8f0e0ea6" offset="0.5257731958762887" />
+                  <Stop color="#900d0d" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor>
+      </JFXTextField>
+      <JFXTextField fx:id="cvcInput" layoutX="421.0" layoutY="238.0" prefHeight="25.0" prefWidth="47.0" promptText="XXX" unFocusColor="BLACK">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#9c2f1137" />
+                  <Stop color="#8f0e0ea6" offset="0.5257731958762887" />
+                  <Stop color="#900d0d" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor>
+      </JFXTextField>
+      <Label alignment="TOP_CENTER" layoutX="113.0" layoutY="299.0" text="Card Type:" AnchorPane.rightAnchor="438.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="bitcoin" layoutX="439.0" layoutY="303.0" mnemonicParsing="false" AnchorPane.topAnchor="303.0">
+         <toggleGroup>
+            <ToggleGroup fx:id="cardType" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="visa" layoutX="339.0" layoutY="303.0" mnemonicParsing="false" toggleGroup="$cardType" />
+      <ImageView fitHeight="47.0" fitWidth="47.0" layoutX="266.0" layoutY="286.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/masterCard.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="47.0" layoutX="463.0" layoutY="292.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/bitcoin.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="47.0" fitWidth="47.0" layoutX="361.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/visaa.png" />
+         </image>
+      </ImageView>
+      <RadioButton fx:id="other" layoutX="527.0" layoutY="303.0" mnemonicParsing="false" selected="true" text="Other" toggleGroup="$cardType" AnchorPane.topAnchor="303.0" />
+      <RadioButton fx:id="master" layoutX="242.0" layoutY="301.0" mnemonicParsing="false" textFill="#b54545" toggleGroup="$cardType" AnchorPane.leftAnchor="242.0" />
+      <JFXButton fx:id="paySubmit" layoutX="438.0" layoutY="357.0" onAction="#submitPayment" prefHeight="30.0" prefWidth="152.0" style="-fx-background-color: #ffa270;" text="SUBMIT" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="0.9142857142857143" startX="0.17619047619047618" startY="0.15714285714285714">
+               <stops>
+                  <Stop color="#c2000042" />
+                  <Stop color="#c2000094" offset="0.7246909191452383" />
+                  <Stop color="#d00000" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+      </JFXButton>
+      <Label layoutX="47.0" layoutY="8.0" opacity="0.44" prefHeight="111.0" prefWidth="543.0" text="La Vida é Bella Afency">
+         <font>
+            <Font name="Kunstler Script" size="72.0" />
+         </font>
+         <textFill>
+            <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="0.7571428571428571">
+               <stops>
+                  <Stop color="#ab472982" />
+                  <Stop color="#f7d71e" offset="0.4789272030651336" />
+                  <Stop color="#ad2b00b8" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label fx:id="errorCard" layoutX="243.0" layoutY="205.0" prefHeight="17.0" prefWidth="122.0" text="*Invalid Card Number">
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.9142857142857143" startX="0.17619047619047618" startY="0.15714285714285714">
+               <stops>
+                  <Stop color="#b81212fc" />
+                  <Stop color="#bf00009d" offset="0.7285223367697594" />
+                  <Stop color="#870f0f" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label fx:id="emptyError" layoutX="446.0" layoutY="393.0" prefHeight="17.0" prefWidth="136.0" text="*Required field is empty">
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.9142857142857143" startX="0.17619047619047618" startY="0.15714285714285714">
+               <stops>
+                  <Stop color="#b81212fc" />
+                  <Stop color="#bf00009d" offset="0.7285223367697594" />
+                  <Stop color="#870f0f" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label alignment="TOP_CENTER" layoutX="92.0" layoutY="126.0" text="Card Number*  : " AnchorPane.rightAnchor="438.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="cardNameInput" layoutX="242.0" layoutY="124.0" prefHeight="25.0" prefWidth="136.0" promptText="Full Name On Card" unFocusColor="BLACK" AnchorPane.leftAnchor="242.0">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#9c2f1137" />
+                  <Stop color="#8f0e0ea6" offset="0.5257731958762887" />
+                  <Stop color="#900d0d" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor>
+      </JFXTextField>
+   </children>
 </AnchorPane>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="309.0" prefWidth="637.0"
+ xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="424.0" fitWidth="637.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../java/com/ihmProject/hotelManagement/assets/ryan-born-x8i6FfaZAbs-unsplash.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="47.0" layoutY="8.0" opacity="0.44" prefHeight="111.0" prefWidth="543.0" text="La Vida é Bella Afency">
+         <font>
+            <Font name="Kunstler Script" size="72.0" />
+         </font>
+         <textFill>
+            <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="0.7571428571428571">
+               <stops>
+                  <Stop color="#ab472982" />
+                  <Stop color="#f7d71e" offset="0.4789272030651336" />
+                  <Stop color="#ad2b00b8" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <JFXTextArea editable="false" focusColor="BLACK" layoutX="72.0" layoutY="120.0" prefHeight="207.0" prefWidth="515.0" text="Your Reservation has been submitted, Check Your Email For Confirmation.&#10;Thank You For Booking With Us">
+         <font>
+            <Font name="Kunstler Script" size="46.0" />
+         </font>
+      </JFXTextArea>
+   </children>
+</AnchorPane>

@@ -7,6 +7,7 @@ package com.ihmProject.hotelManagement;
 
 import com.ihmProject.hotelManagement.spring.bean.Client;
 import com.ihmProject.hotelManagement.spring.bean.Hotel;
+import com.ihmProject.hotelManagement.spring.bean.Payment;
 import com.ihmProject.hotelManagement.spring.bean.Reservation;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -29,6 +30,7 @@ public class JavaFxApplication extends Application {
     public static Hotel chosenHotel = new Hotel(); 
     public static Reservation reservation = new Reservation() ;
     public static Client client = new Client();
+    public static Payment payment = new Payment();
 
     //this is where the spring starts
     @Override

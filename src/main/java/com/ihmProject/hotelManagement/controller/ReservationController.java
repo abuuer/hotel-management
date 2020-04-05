@@ -7,9 +7,9 @@ package com.ihmProject.hotelManagement.controller;
  */
 import com.ihmProject.hotelManagement.JavaFxApplication;
 import static com.ihmProject.hotelManagement.MainPageController.generateRandomReference;
-import com.ihmProject.hotelManagement.spring.bean.Reservation;
 import com.ihmProject.hotelManagement.spring.service.impl.ReservationImpl;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXProgressBar;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
@@ -21,6 +21,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 import net.rgielen.fxweaver.core.FxWeaver;
@@ -71,6 +72,9 @@ public class ReservationController implements Initializable {
     private JFXTextField ageInput;
 
     @FXML
+    private Label inputError;
+
+    @FXML
     private JFXTextArea errorText;
 
     private ReservationImpl reservationService;
@@ -84,9 +88,11 @@ public class ReservationController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         System.out.println(JavaFxApplication.chosenHotel);
         errorText.setVisible(false);
+        inputError.setVisible(false);
     }
 
     public void getClientDetails(ActionEvent event) {
+        errorText.setVisible(false);
         JavaFxApplication.client.setCode(generateRandomReference());
         JavaFxApplication.client.setFirstName(firstNameInput.getText());
         JavaFxApplication.client.setLastName(lastNameInput.getText());
@@ -94,20 +100,26 @@ public class ReservationController implements Initializable {
         JavaFxApplication.client.setEmail(emaillAdressInput.getText());
         JavaFxApplication.client.setAge(ageInput.getText());
         JavaFxApplication.reservation.setClient(JavaFxApplication.client);
-        int result = reservationService.save(JavaFxApplication.reservation);
-
-        if (result == 1) {
-            firstNameInput.getScene().getWindow().hide();
-            FxWeaver fxWeaver = JavaFxApplication.applicationContext.getBean(FxWeaver.class);
-            Parent root = fxWeaver.loadView(PaymentController.class);
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
-            stage.setResizable(false);
+        if (lastNameInput.getText().isEmpty() || ageInput.getText().isEmpty()
+                || emaillAdressInput.getText().isEmpty()
+                || !emaillAdressInput.getText().equals(emaillAdressConfInput.getText())) {
+            inputError.setVisible(true);
         } else {
-            errorText.setVisible(true);
+            int result = reservationService.save(JavaFxApplication.reservation);
+            if (result == 1) {
+                firstNameInput.getScene().getWindow().hide();
+                FxWeaver fxWeaver = JavaFxApplication.applicationContext.getBean(FxWeaver.class);
+                Parent root = fxWeaver.loadView(PaymentController.class);
+                Scene scene = new Scene(root);
+               // Stage stage = new Stage();
+                JavaFxApplication.newStage.setScene(scene);
+                JavaFxApplication.newStage.show();
+                JavaFxApplication.newStage.setResizable(false);
+            } else {
+                errorText.setVisible(true);
+            }
         }
+
     }
 
     public void goBackTosearch(ActionEvent event) throws IOException {
