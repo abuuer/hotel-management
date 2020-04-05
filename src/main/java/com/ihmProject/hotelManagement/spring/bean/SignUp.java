@@ -26,17 +26,14 @@ public class SignUp implements Serializable {
     private Long id;
     private String userName;
     private String password;
-    private byte[] passwordSlt ;
+    private byte[] passwordSlt;
+
     @OneToOne
-    private Client client;
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @OneToOne(mappedBy = "signUp")
     private Login login;
 
     public SignUp() {
     }
 
-    
     public Long getId() {
         return id;
     }
@@ -45,22 +42,20 @@ public class SignUp implements Serializable {
         this.id = id;
     }
 
-    public byte[] getPasswordSlt() {
-        return passwordSlt;
-    }
-
-    public void setPasswordSlt(byte[] passwordSlt) {
-        this.passwordSlt = passwordSlt;
-    }
-
- 
-
     public Login getLogin() {
         return login;
     }
 
     public void setLogin(Login login) {
         this.login = login;
+    }
+
+    public byte[] getPasswordSlt() {
+        return passwordSlt;
+    }
+
+    public void setPasswordSlt(byte[] passwordSlt) {
+        this.passwordSlt = passwordSlt;
     }
 
     public String getUserName() {
@@ -78,15 +73,6 @@ public class SignUp implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
-    }
-    
 
     @Override
     public int hashCode() {
@@ -110,12 +96,7 @@ public class SignUp implements Serializable {
 
     @Override
     public String toString() {
-        return "SignUp{" + "id=" + id + ", userName=" + userName + ", password=" + password + ", client=" + client + ", login=" + login + '}';
+        return "SignUp{" + "id=" + id + ", userName=" + userName + ", password=" + password + '}';
     }
 
-    
-    
-    	
-    
-    
 }

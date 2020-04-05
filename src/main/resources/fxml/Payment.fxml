@@ -13,9 +13,9 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="309.0" prefWidth="637.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ihmProject.hotelManagement.controller.PaymentController">
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="637.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ihmProject.hotelManagement.controller.PaymentController">
    <children>
-      <ImageView fitHeight="424.0" fitWidth="637.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="445.0" fitWidth="663.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/ryan-born-x8i6FfaZAbs-unsplash.jpg" />
          </image>

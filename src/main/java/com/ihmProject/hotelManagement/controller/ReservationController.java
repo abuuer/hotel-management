@@ -6,10 +6,11 @@ package com.ihmProject.hotelManagement.controller;
  * and open the template in the editor.
  */
 import com.ihmProject.hotelManagement.JavaFxApplication;
-import com.ihmProject.hotelManagement.MainPageController;
-
-import static com.ihmProject.hotelManagement.MainPageController.generateRandomReference;
+import com.ihmProject.hotelManagement.StageManager;
+import static com.ihmProject.hotelManagement.controller.SearchController.generateRandomReference;
+import com.ihmProject.hotelManagement.spring.service.fac.SignupService;
 import com.ihmProject.hotelManagement.spring.service.impl.ReservationImpl;
+import com.ihmProject.hotelManagement.spring.service.impl.SignUpImpl;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXProgressBar;
 import com.jfoenix.controls.JFXRadioButton;
@@ -25,6 +26,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
@@ -79,11 +81,19 @@ public class ReservationController implements Initializable {
     @FXML
     private JFXTextArea errorText;
 
+    @FXML
+    private ImageView userProfil;
+
+    @FXML
+    private Label userNameLabel;
+
     private ReservationImpl reservationService;
+    private SignUpImpl signupService;
 
     @Autowired
-    public ReservationController(ReservationImpl reservationImpl) {
-        this.reservationService = reservationImpl;
+    public ReservationController(ReservationImpl reservationService, SignUpImpl signupService) {
+        this.reservationService = reservationService;
+        this.signupService = signupService;
     }
 
     @Override
@@ -91,6 +101,7 @@ public class ReservationController implements Initializable {
         System.out.println(JavaFxApplication.chosenHotel);
         errorText.setVisible(false);
         inputError.setVisible(false);
+        userNameLabel.setText(JavaFxApplication.login.getUserName());
     }
 
     public void getClientDetails(ActionEvent event) {
@@ -102,6 +113,12 @@ public class ReservationController implements Initializable {
         JavaFxApplication.client.setEmail(emaillAdressInput.getText());
         JavaFxApplication.client.setAge(ageInput.getText());
         JavaFxApplication.reservation.setClient(JavaFxApplication.client);
+        System.out.println("login user = :" + JavaFxApplication.login.getUserName());
+        System.out.println("sign up : " + signupService.
+                findByLoginUserName(JavaFxApplication.login.getUserName()));
+        JavaFxApplication.client.setSignUp(signupService.
+                findByLoginUserName(JavaFxApplication.login.getUserName()));
+
         if (lastNameInput.getText().isEmpty() || ageInput.getText().isEmpty()
                 || emaillAdressInput.getText().isEmpty()
                 || !emaillAdressInput.getText().equals(emaillAdressConfInput.getText())) {
@@ -112,11 +129,7 @@ public class ReservationController implements Initializable {
                 firstNameInput.getScene().getWindow().hide();
                 FxWeaver fxWeaver = JavaFxApplication.applicationContext.getBean(FxWeaver.class);
                 Parent root = fxWeaver.loadView(PaymentController.class);
-                Scene scene = new Scene(root);
-               // Stage stage = new Stage();
-                JavaFxApplication.newStage.setScene(scene);
-                JavaFxApplication.newStage.show();
-                JavaFxApplication.newStage.setResizable(false);
+                StageManager.changeScene(inputError, root);
             } else {
                 errorText.setVisible(true);
             }
@@ -127,7 +140,7 @@ public class ReservationController implements Initializable {
     public void goBackTosearch(ActionEvent event) throws IOException {
         firstNameInput.getScene().getWindow().hide();
         FxWeaver fxWeaver = JavaFxApplication.applicationContext.getBean(FxWeaver.class);
-        Parent root = fxWeaver.loadView(MainPageController.class);
+        Parent root = fxWeaver.loadView(ResultsController.class);
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);

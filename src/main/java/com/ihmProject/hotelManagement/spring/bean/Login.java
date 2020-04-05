@@ -25,9 +25,9 @@ public class Login implements Serializable {
     private Long id;
     private String userName;
     private String rawPassword;
-    
+
     @OneToOne
-    private SignUp signUp ;
+    private SignUp signUp;
 
     public Login() {
     }
@@ -36,6 +36,14 @@ public class Login implements Serializable {
         this.id = id;
         this.userName = userName;
         this.rawPassword = rawPassword;
+    }
+
+    public SignUp getSignUp() {
+        return signUp;
+    }
+
+    public void setSignUp(SignUp signUp) {
+        this.signUp = signUp;
     }
 
     public Login(Long id) {
@@ -66,16 +74,6 @@ public class Login implements Serializable {
         this.rawPassword = rawPassword;
     }
 
-    public SignUp getSignUp() {
-        return signUp;
-    }
-
-    public void setSignUp(SignUp signUp) {
-        this.signUp = signUp;
-    }
-
-   
-
     @Override
     public int hashCode() {
         int hash = 0;
@@ -98,7 +96,9 @@ public class Login implements Serializable {
 
     @Override
     public String toString() {
-        return "Login [userName=" + userName + ", rawPassword=" + rawPassword + "]";
+        return "Login{" + "id=" + id + ", userName=" + userName + ", rawPassword=" + rawPassword + ", signUp=" + signUp + '}';
     }
+
+    
 
 }

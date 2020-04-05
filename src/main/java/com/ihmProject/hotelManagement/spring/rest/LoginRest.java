@@ -19,10 +19,7 @@ public class LoginRest {
     @Autowired
     private LoginService loginService;
 
-    @GetMapping("/userName/{userName}")
-    public SignUp findByUserName(@PathVariable String userName) {
-        return loginService.findByUserName(userName);
-    }
+ 
 
     @GetMapping("/login")
     public int confirmPassword(@RequestBody Login login) {

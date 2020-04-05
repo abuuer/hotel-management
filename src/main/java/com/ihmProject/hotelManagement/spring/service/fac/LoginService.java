@@ -14,7 +14,9 @@ import com.ihmProject.hotelManagement.spring.bean.SignUp;
  */
 public interface LoginService {
 
-    SignUp findByUserName(String userName);
+    Login findByUserName(String userName);
 
     int confirmLogin(Login login);
+    
+    int save(Login login);
 }

@@ -48,19 +48,14 @@ public class SignUpImpl implements SignupService {
             byte[] hash = factory.generateSecret(spec).getEncoded();
             Base64.Encoder enc = Base64.getEncoder();
             signUp.setPassword(enc.encodeToString(hash));
-            signUp.setPasswordSlt(salt);       
+            signUp.setPasswordSlt(salt);
             if (foundedUser != null) {
                 return -1;
             } else {
-                int res = clientService.save(signUp.getClient());
-                if (res == -1) {
-                    return -2;
-                } else {
-                    signUpRepository.save(signUp);
-                    return 1;
-                }
-
+                signUpRepository.save(signUp);
+                return 1;
             }
+
         } catch (NoSuchAlgorithmException | InvalidKeySpecException ex) {
             ex.getStackTrace();
         }
@@ -75,6 +70,11 @@ public class SignUpImpl implements SignupService {
     @Override
     public List<SignUp> findAll() {
         return signUpRepository.findAll();
+    }
+
+    @Override
+    public SignUp findByLoginUserName(String userName) {
+        return signUpRepository.findByLoginUserName(userName);
     }
 
 }

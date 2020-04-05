@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import org.springframework.format.annotation.DateTimeFormat;
 
 /**
@@ -25,20 +26,23 @@ public class Reservation implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String reference ;
+    private String reference;
     @DateTimeFormat(pattern = "dd-MM-yyyy")
-    private LocalDate checkIn ;
+    private LocalDate checkIn;
     @DateTimeFormat(pattern = "dd-MM-yyyy")
-    private LocalDate checkOut ;
-    private int numberOfAdults ;
-    private int numberOfChilds ;
-    private int numberOfRooms ;
-    
+    private LocalDate checkOut;
+    private int numberOfAdults;
+    private int numberOfChilds;
+    private int numberOfRooms;
+
     @ManyToOne
-    private Client client ;
-    
+    private Client client;
+
     @ManyToOne
-    private Hotel hotel ;
+    private Hotel hotel;
+
+    @OneToOne
+    private SignUp signUp;
 
     public Reservation() {
     }
@@ -51,6 +55,14 @@ public class Reservation implements Serializable {
         this.numberOfAdults = numberOfAdults;
         this.numberOfChilds = numberOfChilds;
         this.numberOfRooms = numberOfRooms;
+    }
+
+    public SignUp getSignUp() {
+        return signUp;
+    }
+
+    public void setSignUp(SignUp signUp) {
+        this.signUp = signUp;
     }
 
     public Client getClient() {
@@ -116,7 +128,6 @@ public class Reservation implements Serializable {
     public void setNumberOfRooms(int numberOfRooms) {
         this.numberOfRooms = numberOfRooms;
     }
-    
 
     public Long getId() {
         return id;
@@ -150,5 +161,5 @@ public class Reservation implements Serializable {
     public String toString() {
         return "com.ihmProject.hotelManagement.spring.bean.Reservation[ id=" + id + " ]";
     }
-    
+
 }

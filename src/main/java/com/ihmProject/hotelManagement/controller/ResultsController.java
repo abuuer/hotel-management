@@ -6,7 +6,7 @@
 package com.ihmProject.hotelManagement.controller;
 
 import com.ihmProject.hotelManagement.JavaFxApplication;
-import com.ihmProject.hotelManagement.MainPageController;
+import com.ihmProject.hotelManagement.StageManager;
 import com.ihmProject.hotelManagement.spring.bean.Hotel;
 import com.ihmProject.hotelManagement.spring.service.impl.HotelImpl;
 import com.jfoenix.controls.JFXButton;
@@ -42,7 +42,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @FxmlView("/fxml/ResultsPage.fxml")
-public class ResultsPageController implements Initializable {
+public class ResultsController implements Initializable {
 
     @FXML
     private ImageView backGroundImage;
@@ -109,6 +109,12 @@ public class ResultsPageController implements Initializable {
     @FXML
     private VBox hbChildVbox2;
 
+    @FXML
+    private ImageView userProfil;
+
+    @FXML
+    private Label userNameLabel;
+
     private HotelImpl hotel;
     private List<Hotel> listHotels = new ArrayList<>();
     private int i = 0;
@@ -117,7 +123,7 @@ public class ResultsPageController implements Initializable {
     int x = ((int) (listHotels.size() / 3)) + 2;
 
     @Autowired
-    public ResultsPageController(HotelImpl hotel) {
+    public ResultsController(HotelImpl hotel) {
         this.hotel = hotel;
     }
 
@@ -129,6 +135,7 @@ public class ResultsPageController implements Initializable {
         System.out.println(listHotels);
         displayHotels();
         resPageNumber.setText(pageNumber + " / " + x);
+        userNameLabel.setText(JavaFxApplication.login.getUserName());
 
     }
 
@@ -136,7 +143,6 @@ public class ResultsPageController implements Initializable {
         cmp = cmp - 3;
         if (cmp > 3) {
             resPageNumber.setText(pageNumber++ + " / " + x);
-            System.err.println(pageNumber++);
             this.i = this.i + 3;
         } else {
             resPageNumber.setText((listHotels.size() / 3) + 1 + " / " + x);
@@ -160,7 +166,6 @@ public class ResultsPageController implements Initializable {
 
     public void displayHotels() {
         int i = this.i;
-        System.out.println(listHotels.size());
         resCityName.setText(listHotels.get(i).getCity());
         resHotelName.setText(listHotels.get(i).getName());
         resHotelStars.setRating(listHotels.get(i).getStars());
@@ -175,7 +180,7 @@ public class ResultsPageController implements Initializable {
     public void goBackToLogin(ActionEvent event) throws IOException {
         resCityName.getScene().getWindow().hide();
         FxWeaver fxWeaver = JavaFxApplication.applicationContext.getBean(FxWeaver.class);
-        Parent root = fxWeaver.loadView(MainPageController.class);
+        Parent root = fxWeaver.loadView(SearchController.class);
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);
@@ -184,9 +189,8 @@ public class ResultsPageController implements Initializable {
     }
 
     public void goToReservation(MouseEvent event) throws IOException {
-        resHotelName.getScene().getWindow().hide();
         Label labelIn = null;
-        
+
         if (event.getSource() == bigHBox) {
             Node nodeOut = bigHBox.getChildren().get(1);
             if (nodeOut instanceof VBox) {
@@ -214,9 +218,6 @@ public class ResultsPageController implements Initializable {
 
         FxWeaver fxWeaver = JavaFxApplication.applicationContext.getBean(FxWeaver.class);
         Parent root = fxWeaver.loadView(ReservationController.class);
-        Scene scene = new Scene(root);
-        JavaFxApplication.newStage.setScene(scene);
-        JavaFxApplication.newStage.show();
-        JavaFxApplication.newStage.setResizable(true);
+        StageManager.changeScene(resHotelName, root);
     }
 }

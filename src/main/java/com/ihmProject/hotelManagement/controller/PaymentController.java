@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.ihmProject.hotelManagement.JavaFxApplication;
-import com.ihmProject.hotelManagement.MainPageController;
+import com.ihmProject.hotelManagement.StageManager;
 import com.ihmProject.hotelManagement.spring.service.impl.PaymentImpl;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
@@ -28,6 +28,9 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.Pane;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.stage.Stage;
+import net.rgielen.fxweaver.core.FxWeaver;
 
 /**
  *
@@ -94,17 +97,17 @@ public class PaymentController implements Initializable {
             JavaFxApplication.payment.setCardNumber(cardNumberInput.getText());
             JavaFxApplication.payment.setExpDate(expDateInput.getText());
             JavaFxApplication.payment.setCardCVC(cvcInput.getText());
-            JavaFxApplication.payment.setReference(MainPageController.generateRandomReference());
+            JavaFxApplication.payment.setReference(SearchController.generateRandomReference());
             JavaFxApplication.payment.setNameOnCard(cardNameInput.getText());
             int res = paymentService.pay(JavaFxApplication.payment);
 
             if (res == -2) {
+                emptyError.setVisible(false);
                 errorCard.setVisible(true);
             } else {
-                Pane myPane = FXMLLoader.load(getClass().getResource("/fxml/Success.fxml"));
-                Scene myScene = new Scene(myPane);
-                JavaFxApplication.newStage.setScene(myScene);
-                JavaFxApplication.newStage.show();
+                FxWeaver fxWeaver = JavaFxApplication.applicationContext.getBean(FxWeaver.class);
+                Parent root = fxWeaver.loadView(SuccessController.class);
+                StageManager.changeScene(errorCard, root);
             }
 
         }

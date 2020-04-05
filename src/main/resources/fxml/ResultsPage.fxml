@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.Rating?>
 
-<AnchorPane id="AnchorPane" prefHeight="572.0" prefWidth="458.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ihmProject.hotelManagement.controller.ResultsPageController">
+<AnchorPane id="AnchorPane" prefHeight="572.0" prefWidth="458.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ihmProject.hotelManagement.controller.ResultsController">
 <children> 
     <ImageView fx:id="backGroundImage" fitHeight="663.0" fitWidth="533.0" opacity="0.2" pickOnBounds="true">
         <effect>
@@ -39,18 +39,18 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <HBox fx:id="bigHBox" layoutX="114.0" layoutY="77.0" onMouseClicked="#goToReservation" prefHeight="150.0" prefWidth="366.0">
+      <HBox fx:id="bigHBox" layoutX="82.0" layoutY="77.0" onMouseClicked="#goToReservation" prefHeight="150.0" prefWidth="366.0">
          <children>
-            <ImageView fx:id="hbChildImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="hbChildImage" fitHeight="150.0" fitWidth="200.0" opacity="0.74" pickOnBounds="true">
                <image>
-                  <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/photo-1545175707-9eec1209f720.jpg" />
+                  <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/download%20(1).jpg" />
                </image>
             </ImageView>
             <VBox fx:id="hbChildVbox" prefHeight="150.0" prefWidth="226.0">
                <children>
                   <Label fx:id="resHotelName" alignment="TOP_LEFT" prefHeight="40.0" prefWidth="141.0" text="Label">
                      <font>
-                        <Font name="Kunstler Script" size="29.0" />
+                        <Font name="System Bold" size="29.0" />
                      </font>
                   </Label>
                   <Label fx:id="resCityName" layoutX="35.0" layoutY="115.0" prefHeight="31.0" prefWidth="145.0" text="Label" />
@@ -68,22 +68,22 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </HBox>
-      <HBox fx:id="bigHBox1" layoutX="114.0" layoutY="257.0" onMouseClicked="#goToReservation" prefHeight="150.0" prefWidth="342.0">
+      <HBox fx:id="bigHBox1" layoutX="82.0" layoutY="257.0" onMouseClicked="#goToReservation" prefHeight="150.0" prefWidth="342.0">
          <children>
-            <ImageView fx:id="hbChildImage1" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="hbChildImage1" fitHeight="150.0" fitWidth="200.0" opacity="0.76" pickOnBounds="true">
                <image>
-                  <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/photo-1545175707-9eec1209f720.jpg" />
+                  <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/download.jpg" />
                </image>
             </ImageView>
             <VBox fx:id="hbChildVbox1" prefHeight="150.0" prefWidth="226.0">
                <children>
                   <Label fx:id="resHotelName1" alignment="TOP_LEFT" prefHeight="47.0" prefWidth="150.0" text="Label">
                      <font>
-                        <Font name="Kunstler Script" size="29.0" />
+                        <Font name="System Bold" size="29.0" />
                      </font>
                   </Label>
                   <Label fx:id="resCityName1" layoutX="35.0" layoutY="115.0" prefHeight="31.0" prefWidth="145.0" text="Label" />
-                  <Rating fx:id="resHotelStars1" rating="3.5" />
+                  <Rating fx:id="resHotelStars1" prefHeight="0.0" prefWidth="195.0" rating="3.5" />
                </children>
                <padding>
                   <Insets left="25.0" />
@@ -97,18 +97,18 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </HBox>
-      <HBox fx:id="bigHBox2" layoutX="114.0" layoutY="450.0" onMouseClicked="#goToReservation" prefHeight="150.0" prefWidth="366.0">
+      <HBox fx:id="bigHBox2" layoutX="82.0" layoutY="450.0" onMouseClicked="#goToReservation" prefHeight="150.0" prefWidth="366.0">
          <children>
-            <ImageView fx:id="hbChildImage11" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="hbChildImage11" fitHeight="150.0" fitWidth="200.0" opacity="0.76" pickOnBounds="true">
                <image>
-                  <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/photo-1545175707-9eec1209f720.jpg" />
+                  <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/mrk-exterior.jpg" />
                </image>
             </ImageView>
             <VBox fx:id="hbChildVbox2" prefHeight="150.0" prefWidth="226.0">
                <children>
                   <Label fx:id="resHotelName11" alignment="TOP_LEFT" prefHeight="47.0" prefWidth="150.0" text="Label">
                      <font>
-                        <Font name="Kunstler Script" size="29.0" />
+                        <Font name="System Bold" size="29.0" />
                      </font>
                   </Label>
                   <Label fx:id="resCityName11" layoutX="35.0" layoutY="115.0" prefHeight="31.0" prefWidth="145.0" text="Label" />
@@ -157,19 +157,15 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="114.0" layoutY="14.0" opacity="0.44" prefHeight="50.0" prefWidth="305.0" text="La Vida é Bella Agency">
+      <ImageView fx:id="userProfil" fitHeight="30.0" fitWidth="31.0" layoutX="42.0" layoutY="24.0" opacity="0.63" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/icons/2x/baseline_supervised_user_circle_black_18dp.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="userNameLabel" layoutX="82.0" layoutY="32.0" text="User Name" underline="true">
          <font>
-            <Font name="Kunstler Script" size="40.0" />
+            <Font name="System Bold" size="12.0" />
          </font>
-         <textFill>
-            <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="0.7571428571428571">
-               <stops>
-                  <Stop color="#ab472982" />
-                  <Stop color="#f7d71e" offset="0.4789272030651336" />
-                  <Stop color="#ad2b00b8" offset="1.0" />
-               </stops>
-            </LinearGradient>
-         </textFill>
       </Label>
 </children>
 </AnchorPane>

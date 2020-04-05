@@ -7,6 +7,7 @@ package com.ihmProject.hotelManagement.spring.service.impl;
 
 import com.ihmProject.hotelManagement.spring.bean.Login;
 import com.ihmProject.hotelManagement.spring.bean.SignUp;
+import com.ihmProject.hotelManagement.spring.repository.LoginRepository;
 import com.ihmProject.hotelManagement.spring.service.fac.LoginService;
 import com.ihmProject.hotelManagement.spring.service.fac.SignupService;
 import java.security.NoSuchAlgorithmException;
@@ -31,14 +32,13 @@ import org.springframework.stereotype.Service;
 public class LoginImpl implements LoginService {
 
     @Autowired
-    private SignupService signupService;
+    private LoginRepository loginRepository;
     @Autowired
-    private LoginService loginService;
+    private SignupService signupService;
 
     @Override
     public int confirmLogin(Login login) {
-        SignUp foundedUser = loginService.findByUserName(login.getUserName());
-        System.out.println(foundedUser);
+        SignUp foundedUser = signupService.findByUserName(login.getUserName());
         String rawPwdHashed = null;
         if (foundedUser == null) {
             return -1;
@@ -68,7 +68,23 @@ public class LoginImpl implements LoginService {
     }
 
     @Override
-    public SignUp findByUserName(String userName) {
-        return signupService.findByUserName(userName);
+    public Login findByUserName(String userName) {
+        return loginRepository.findByUserName(userName);
+    }
+
+    @Override
+    public int save(Login login) {
+        Login fLogin = loginRepository.findByUserName(login.getUserName());
+        SignUp fSignUp = signupService.findByUserName(login.getSignUp().getUserName());
+        if (fLogin != null) {
+            login.getSignUp().setLogin(fLogin);
+            signupService.save(login.getSignUp());
+            return -1;
+        } else {
+            login.getSignUp().setLogin(login);
+            signupService.save(login.getSignUp());
+            loginRepository.save(login);
+            return 1;
+        }
     }
 }

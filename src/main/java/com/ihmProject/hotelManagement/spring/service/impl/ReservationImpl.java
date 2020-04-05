@@ -8,13 +8,12 @@ package com.ihmProject.hotelManagement.spring.service.impl;
 import com.ihmProject.hotelManagement.spring.bean.Client;
 import com.ihmProject.hotelManagement.spring.bean.Hotel;
 import com.ihmProject.hotelManagement.spring.bean.Reservation;
+import com.ihmProject.hotelManagement.spring.bean.SignUp;
 import com.ihmProject.hotelManagement.spring.repository.ReservationRepository;
 import com.ihmProject.hotelManagement.spring.service.fac.ClientService;
 import com.ihmProject.hotelManagement.spring.service.fac.HotelService;
 import com.ihmProject.hotelManagement.spring.service.fac.ReservationService;
-
-import javafx.collections.ObservableList;
-
+import com.ihmProject.hotelManagement.spring.service.fac.SignupService;
 import java.util.Date;
 import java.util.List;
 
@@ -34,6 +33,8 @@ public class ReservationImpl implements ReservationService {
     private ClientService clientService;
     @Autowired
     private HotelService hotelService;
+    @Autowired
+    private SignupService signupService;
 
     @Override
     public Reservation findByReference(String reference) {
@@ -62,9 +63,9 @@ public class ReservationImpl implements ReservationService {
         if (foundedRes != null) {
             return -1;
         } else if (foundedHotel == null) {
-            return -2 ;
-        }else if (foundedClient != null) {
-            return -3 ;
+            return -2;
+        } else if (foundedClient != null) {
+            return -3;
         } else {
             clientService.save(reservation.getClient());
             reservation.setHotel(foundedHotel);

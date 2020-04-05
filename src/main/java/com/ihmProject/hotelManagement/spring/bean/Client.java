@@ -11,7 +11,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -24,15 +26,17 @@ public class Client implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String code ;
-    private String firstName ;
-    private String LastName ;
-    private String adress ;
-    private String email ;
-    private String age ;
-    
+    private String code;
+    private String firstName;
+    private String LastName;
+    private String adress;
+    private String email;
+    private String age;
+
     @OneToMany(mappedBy = "client")
     private List<Reservation> reservations;
+    @OneToOne
+    private SignUp signUp;
 
     public Client() {
     }
@@ -46,6 +50,14 @@ public class Client implements Serializable {
         this.email = email;
         this.age = age;
         this.reservations = reservations;
+    }
+
+    public SignUp getSignUp() {
+        return signUp;
+    }
+
+    public void setSignUp(SignUp signUp) {
+        this.signUp = signUp;
     }
 
     public String getCode() {
@@ -63,7 +75,7 @@ public class Client implements Serializable {
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
-    
+
     public Long getId() {
         return id;
     }
@@ -111,7 +123,6 @@ public class Client implements Serializable {
     public void setAge(String age) {
         this.age = age;
     }
-    
 
     @Override
     public int hashCode() {
@@ -137,5 +148,5 @@ public class Client implements Serializable {
     public String toString() {
         return "com.ihmProject.hotelManagement.spring.bean.Client[ id=" + id + " ]";
     }
-    
+
 }

@@ -18,7 +18,8 @@ public interface SignupService {
     int save(SignUp login);
 
     SignUp findByUserName(String userName);
-    
+
     List<SignUp> findAll();
-    
+
+    SignUp findByLoginUserName(String userName);
 }

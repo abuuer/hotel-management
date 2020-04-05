@@ -107,20 +107,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <Label opacity="0.44" prefHeight="119.0" prefWidth="543.0" text="La Vida é Bella Afency">
-         <font>
-            <Font name="Kunstler Script" size="72.0" />
-         </font>
-         <textFill>
-            <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="0.7571428571428571">
-               <stops>
-                  <Stop color="#ab472982" />
-                  <Stop color="#f7d71e" offset="0.4789272030651336" />
-                  <Stop color="#ad2b00b8" offset="1.0" />
-               </stops>
-            </LinearGradient>
-         </textFill>
-      </Label>
       <NumberValidator />
       <Label fx:id="inputError" layoutX="201.0" layoutY="589.0" prefHeight="17.0" prefWidth="290.0" text="*Required field empty or Email Adresses dont match !" textFill="#db0000f5" />
       <JFXTextField fx:id="adressInput" layoutX="298.0" layoutY="92.0" prefHeight="25.0" prefWidth="182.0" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="400.0">
@@ -197,5 +183,15 @@
             <Font name="System Bold" size="11.0" />
          </font>
       </JFXTextArea>
+      <ImageView fx:id="userProfil" fitHeight="30.0" fitWidth="31.0" layoutX="52.0" layoutY="34.0" opacity="0.63" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/icons/2x/baseline_supervised_user_circle_black_18dp.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="userNameLabel" layoutX="92.0" layoutY="42.0" text="User Name" underline="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

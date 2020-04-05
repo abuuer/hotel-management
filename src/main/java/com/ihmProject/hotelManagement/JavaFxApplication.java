@@ -5,16 +5,13 @@
  */
 package com.ihmProject.hotelManagement;
 
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.context.ConfigurableApplicationContext;
-
+import com.ihmProject.hotelManagement.controller.SearchController;
 import com.ihmProject.hotelManagement.spring.bean.Client;
 import com.ihmProject.hotelManagement.spring.bean.Hotel;
 import com.ihmProject.hotelManagement.spring.bean.Login;
 import com.ihmProject.hotelManagement.spring.bean.Payment;
 import com.ihmProject.hotelManagement.spring.bean.Reservation;
 import com.ihmProject.hotelManagement.spring.bean.SignUp;
-
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Parent;
@@ -33,6 +30,8 @@ public class JavaFxApplication extends Application {
     public static String chosenCity ; 
     public static Hotel chosenHotel = new Hotel(); 
     public static Reservation reservation = new Reservation() ;
+    public static Login login = new Login();
+    public static SignUp signUp = new SignUp();
     public static Client client = new Client();
     public static Payment payment = new Payment();
     //edit : add this
@@ -59,7 +58,7 @@ public class JavaFxApplication extends Application {
     public void start(final Stage stage) {
     	JavaFxApplication.newStage = stage ;
         FxWeaver fxWeaver = applicationContext.getBean(FxWeaver.class);
-        Parent root = fxWeaver.loadView(MainPageController.class);
+        Parent root = fxWeaver.loadView(LoginPageController.class);
         Scene scene = new Scene(root);
         JavaFxApplication.newStage.setScene(scene);
         JavaFxApplication.newStage.show();

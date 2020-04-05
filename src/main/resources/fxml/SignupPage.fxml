@@ -2,7 +2,6 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXPasswordField?>
-<?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
@@ -15,146 +14,138 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="412.0" prefWidth="710.0" style="-fx-background-color: #fdfbc4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ihmProject.hotelManagement.controller.SignupController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="299.0" prefWidth="701.0" style="-fx-background-color: #fdfbc4;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ihmProject.hotelManagement.controller.SignupController">
    <children>
-      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="351.0" prefWidth="700.0" style="-fx-background-color: #fdfbc4;">
-         <children>
-            <ImageView fitHeight="435.0" fitWidth="301.0" layoutX="14.0" layoutY="6.0" opacity="0.11" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/photo-1545175707-9eec1209f720.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="358.0" fitWidth="350.0" layoutX="351.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/photo-1545175707-9eec1209f720.jpg" />
-               </image>
-               <effect>
-                  <BoxBlur height="68.75" iterations="3" width="90.0" />
-               </effect>
-            </ImageView>
-            <Line endX="25.0" endY="262.0" layoutX="325.0" layoutY="127.0" startX="26.5" startY="-62.99998474121094" style="-fx-cursor: #4b636e;">
-               <stroke>
-                  <LinearGradient endX="1.0" endY="0.8952380952380953" startX="0.6428571428571429">
-                     <stops>
-                        <Stop color="#4c636e23" />
-                        <Stop color="#ffbd4524" offset="0.007662835249042145" />
-                        <Stop color="#ffbd45" offset="0.2999565509341549" />
-                        <Stop color="#ffbd45" offset="0.60919540229885" />
-                        <Stop color="#ffbc4734" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </stroke>
-            </Line>
-            <Label layoutX="24.0" layoutY="112.0" prefHeight="50.0" prefWidth="305.0" text="La Vida é Bella Agency">
-               <font>
-                  <Font name="Kunstler Script" size="40.0" />
-               </font>
-               <textFill>
-                  <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="0.7571428571428571">
-                     <stops>
-                        <Stop color="#ab472982" />
-                        <Stop color="#f7d71e" offset="0.4789272030651336" />
-                        <Stop color="#ad2b00b8" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-            </Label>
-            <JFXPasswordField fx:id="loginPasswordLabel" labelFloat="true" layoutX="458.0" layoutY="178.0" promptText="Password" unFocusColor="#c236364b">
-               <focusColor>
-                  <LinearGradient endX="1.0" endY="1.0" startX="0.3" startY="0.15714285714285714">
-                     <stops>
-                        <Stop color="#c21a0058" />
-                        <Stop color="#c41c00" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </focusColor>
-            </JFXPasswordField>
-            <JFXButton fx:id="registerLoginButton" layoutX="99.0" layoutY="217.0" onAction="#backToLoginAction" opacity="0.82" prefHeight="30.0" prefWidth="152.0" style="-fx-background-color: #ffa270;" text="LOG IN" textFill="WHITE">
-               <ripplerFill>
-                  <LinearGradient endX="1.0" endY="0.9142857142857143" startX="0.17619047619047618" startY="0.15714285714285714">
-                     <stops>
-                        <Stop color="#c21a00de" />
-                        <Stop color="#c21a0090" offset="0.7285223367697594" />
-                        <Stop color="#c21a0027" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </ripplerFill>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-            <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="415.0" layoutY="125.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../java/com/ihmProject/hotelManagement/assets/icons/2x/round_person_black_18dp.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="415.0" layoutY="179.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../java/com/ihmProject/hotelManagement/assets/icons/2x/round_vpn_key_black_18dp.png" />
-               </image>
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor>
-            </ImageView>
-            <JFXButton fx:id="loginRegisterButton" layoutX="458.0" layoutY="298.0" onAction="#registerAction" opacity="0.82" prefHeight="30.0" prefWidth="152.0" style="-fx-background-color: #ffa270;" text="REGISTER" textFill="WHITE">
-               <ripplerFill>
-                  <LinearGradient endX="1.0" endY="0.9142857142857143" startX="0.17619047619047618" startY="0.15714285714285714">
-                     <stops>
-                        <Stop color="#c21a00de" />
-                        <Stop color="#c21a0090" offset="0.7285223367697594" />
-                        <Stop color="#c21a0027" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </ripplerFill>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-            <JFXButton fx:id="registerBackToSearchBtn" layoutX="100.0" layoutY="271.0" onAction="#backToSearchAction" opacity="0.82" prefHeight="30.0" prefWidth="152.0" style="-fx-background-color: #ffa270;" text="GO BACK TO SEARCH" textFill="WHITE">
-               <ripplerFill>
-                  <LinearGradient endX="1.0" endY="0.9142857142857143" startX="0.17619047619047618" startY="0.15714285714285714">
-                     <stops>
-                        <Stop color="#c21a00de" />
-                        <Stop color="#c21a0090" offset="0.7285223367697594" />
-                        <Stop color="#c21a0027" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </ripplerFill>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-            <JFXTextField fx:id="loginUsernameLabel" labelFloat="true" layoutX="458.0" layoutY="124.0" promptText="Username" unFocusColor="#c236366a">
-               <focusColor>
-                  <LinearGradient endX="1.0" endY="0.9142857142857143" startX="0.3" startY="0.15714285714285714">
-                     <stops>
-                        <Stop color="#c21a0066" />
-                        <Stop color="#c21a008f" offset="0.7285223367697594" />
-                        <Stop color="#bf1a00f0" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </focusColor>
-            </JFXTextField>
-            <JFXPasswordField fx:id="loginPasswordLabel1" labelFloat="true" layoutX="458.0" layoutY="234.0" promptText="Confirm password" unFocusColor="#c236364b">
-               <focusColor>
-                  <LinearGradient endX="1.0" endY="1.0" startX="0.3" startY="0.15714285714285714">
-                     <stops>
-                        <Stop color="#c21a0058" />
-                        <Stop color="#c41c00" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </focusColor>
-            </JFXPasswordField>
-            <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="415.0" layoutY="235.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../java/com/ihmProject/hotelManagement/assets/icons/2x/round_vpn_key_black_18dp.png" />
-               </image>
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor>
-            </ImageView>
-            <JFXTextArea fx:id="errorText" focusColor="#f52f1d" layoutX="415.0" layoutY="339.0" prefHeight="30.0" prefWidth="292.0" text="      Please enter each field correctly" unFocusColor="#d31717" />
-         </children>
-      </AnchorPane>
+      <ImageView fitHeight="328.0" fitWidth="361.0" layoutX="-11.0" layoutY="-16.0" opacity="0.11" pickOnBounds="true">
+         <image>
+            <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/photo-1545175707-9eec1209f720.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="311.0" fitWidth="350.0" layoutX="351.0" opacity="0.35" pickOnBounds="true">
+         <image>
+            <Image url="file:/C:/Users/anoir/Documents/NetBeansProjects/hotel-management-spring/src/main/java/com/ihmProject/hotelManagement/assets/photo-1545175707-9eec1209f720.jpg" />
+         </image>
+         <effect>
+            <BoxBlur height="68.75" iterations="3" width="90.0" />
+         </effect>
+      </ImageView>
+      <Line endX="26.0" endY="156.0" layoutX="325.0" layoutY="127.0" startX="26.0" startY="-127.0" style="-fx-cursor: #4b636e;">
+         <stroke>
+            <LinearGradient endX="1.0" endY="0.8952380952380953" startX="0.6428571428571429">
+               <stops>
+                  <Stop color="#4c636e23" />
+                  <Stop color="#ffbd4524" offset="0.007662835249042145" />
+                  <Stop color="#ffbd45" offset="0.2999565509341549" />
+                  <Stop color="#ffbd45" offset="0.60919540229885" />
+                  <Stop color="#ffbc4734" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Line>
+      <Label layoutX="24.0" layoutY="129.0" prefHeight="50.0" prefWidth="305.0" text="La Vida é Bella Agency">
+         <font>
+            <Font name="Kunstler Script" size="40.0" />
+         </font>
+         <textFill>
+            <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="0.7571428571428571">
+               <stops>
+                  <Stop color="#ab472982" />
+                  <Stop color="#f7d71e" offset="0.4789272030651336" />
+                  <Stop color="#ad2b00b8" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <JFXPasswordField fx:id="signupPswd" labelFloat="true" layoutX="458.0" layoutY="117.0" promptText="Password" unFocusColor="#c236364b">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.3" startY="0.15714285714285714">
+               <stops>
+                  <Stop color="#c21a0058" />
+                  <Stop color="#c41c00" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor>
+      </JFXPasswordField>
+      <JFXButton fx:id="backToLoginAction" layoutX="101.0" layoutY="232.0" onAction="#backToLoginAction" opacity="0.82" prefHeight="30.0" prefWidth="152.0" style="-fx-background-color: #ffa270;" text="LOG IN" textFill="WHITE">
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="0.9142857142857143" startX="0.17619047619047618" startY="0.15714285714285714">
+               <stops>
+                  <Stop color="#c21a00de" />
+                  <Stop color="#c21a0090" offset="0.7285223367697594" />
+                  <Stop color="#c21a0027" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="415.0" layoutY="64.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../java/com/ihmProject/hotelManagement/assets/icons/2x/round_person_black_18dp.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="415.0" layoutY="118.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../java/com/ihmProject/hotelManagement/assets/icons/2x/round_vpn_key_black_18dp.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </ImageView>
+      <JFXButton fx:id="signupBtn" layoutX="450.0" layoutY="232.0" onAction="#registerAction" opacity="0.82" prefHeight="30.0" prefWidth="152.0" style="-fx-background-color: #ffa270;" text="REGISTER" textFill="WHITE">
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="0.9142857142857143" startX="0.17619047619047618" startY="0.15714285714285714">
+               <stops>
+                  <Stop color="#c21a00de" />
+                  <Stop color="#c21a0090" offset="0.7285223367697594" />
+                  <Stop color="#c21a0027" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXTextField fx:id="signupuser" labelFloat="true" layoutX="458.0" layoutY="63.0" promptText="Username" unFocusColor="#c236366a">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="0.9142857142857143" startX="0.3" startY="0.15714285714285714">
+               <stops>
+                  <Stop color="#c21a0066" />
+                  <Stop color="#c21a008f" offset="0.7285223367697594" />
+                  <Stop color="#bf1a00f0" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor>
+      </JFXTextField>
+      <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="415.0" layoutY="167.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../java/com/ihmProject/hotelManagement/assets/icons/2x/round_vpn_key_black_18dp.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </ImageView>
+      <JFXPasswordField fx:id="confirmPswd" labelFloat="true" layoutX="458.0" layoutY="165.0" promptText="Password" unFocusColor="#c236364b">
+         <focusColor>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.3" startY="0.15714285714285714">
+               <stops>
+                  <Stop color="#c21a0058" />
+                  <Stop color="#c41c00" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </focusColor>
+      </JFXPasswordField>
+      <Label fx:id="error" layoutX="458.0" layoutY="197.0" text="*Fill all the fields &amp; confirm password">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#970707" />
+                  <Stop color="#261515" offset="0.5360824742268041" />
+                  <Stop color="#ff001e" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
    </children>
 </AnchorPane>
