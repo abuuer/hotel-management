@@ -77,9 +77,10 @@ public class SignupController implements Initializable {
 	    		        Parent root = fxWeaver.loadView(LoginPageController.class
 	    		        );
 	    		        Scene scene = new Scene(root);
-	    		        JavaFxApplication.newStage.setScene(scene);
-	    		        JavaFxApplication.newStage.show();
-	    		        JavaFxApplication.newStage.setResizable(false);
+	    		        Stage stage = new Stage();
+	    		        stage.setScene(scene);
+	    		        stage.show();
+	    		        stage.setResizable(false);
 	    }
 	    
 	    @FXML

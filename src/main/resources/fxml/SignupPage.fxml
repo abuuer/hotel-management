@@ -82,7 +82,7 @@
                   </LinearGradient>
                </focusColor>
             </JFXPasswordField>
-            <JFXButton fx:id="loginButton" layoutX="99.0" layoutY="217.0" onAction="#backToLoginAction" opacity="0.82" prefHeight="30.0" prefWidth="152.0" style="-fx-background-color: #ffa270;" text="LOG IN" textFill="WHITE">
+            <JFXButton fx:id="registerLoginButton" layoutX="99.0" layoutY="217.0" onAction="#backToLoginAction" opacity="0.82" prefHeight="30.0" prefWidth="152.0" style="-fx-background-color: #ffa270;" text="LOG IN" textFill="WHITE">
                <ripplerFill>
                   <LinearGradient endX="1.0" endY="0.9142857142857143" startX="0.17619047619047618" startY="0.15714285714285714">
                      <stops>
@@ -124,7 +124,7 @@
                </cursor>
             </JFXButton>
             <JFXProgressBar fx:id="loginProgress" layoutX="427.0" layoutY="343.0" />
-            <JFXButton fx:id="loginBackToSearchBtn" layoutX="100.0" layoutY="271.0" onAction="#BackToSearchAction" opacity="0.82" prefHeight="30.0" prefWidth="152.0" style="-fx-background-color: #ffa270;" text="GO BACK TO SEARCH" textFill="WHITE">
+            <JFXButton fx:id="registerBackToSearchBtn" layoutX="100.0" layoutY="271.0" onAction="#backToSearchAction" opacity="0.82" prefHeight="30.0" prefWidth="152.0" style="-fx-background-color: #ffa270;" text="GO BACK TO SEARCH" textFill="WHITE">
                <ripplerFill>
                   <LinearGradient endX="1.0" endY="0.9142857142857143" startX="0.17619047619047618" startY="0.15714285714285714">
                      <stops>
