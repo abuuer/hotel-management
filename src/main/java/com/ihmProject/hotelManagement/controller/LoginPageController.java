@@ -87,7 +87,7 @@ public class LoginPageController implements Initializable {
 //	public void loginPageController(LoginImpl login) {
 //		this.login = login ;
 //	}
-    public void goBackToLogin(ActionEvent event) throws IOException {
+   /* public void goBackToLogin(ActionEvent event) throws IOException {
         loginButton.getScene().getWindow().hide();
         FxWeaver fxWeaver = JavaFxApplication.applicationContext.getBean(FxWeaver.class
         );
@@ -98,7 +98,7 @@ public class LoginPageController implements Initializable {
         stage.setScene(scene);
         stage.show();
         stage.setResizable(false);
-    }
+    }*/
     public void goToRegister(ActionEvent event) throws IOException {
     	loginRegisterButton.getScene().getWindow().hide();
         FxWeaver fxWeaver = JavaFxApplication.applicationContext.getBean(FxWeaver.class
