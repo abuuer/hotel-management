@@ -113,11 +113,8 @@ public class ReservationController implements Initializable {
         JavaFxApplication.client.setEmail(emaillAdressInput.getText());
         JavaFxApplication.client.setAge(ageInput.getText());
         JavaFxApplication.reservation.setClient(JavaFxApplication.client);
-        System.out.println("login user = :" + JavaFxApplication.login.getUserName());
-        System.out.println("sign up : " + signupService.
-                findByLoginUserName(JavaFxApplication.login.getUserName()));
         JavaFxApplication.client.setSignUp(signupService.
-                findByLoginUserName(JavaFxApplication.login.getUserName()));
+                findByUserName(JavaFxApplication.login.getUserName()));
 
         if (lastNameInput.getText().isEmpty() || ageInput.getText().isEmpty()
                 || emaillAdressInput.getText().isEmpty()
@@ -138,13 +135,8 @@ public class ReservationController implements Initializable {
     }
 
     public void goBackTosearch(ActionEvent event) throws IOException {
-        firstNameInput.getScene().getWindow().hide();
         FxWeaver fxWeaver = JavaFxApplication.applicationContext.getBean(FxWeaver.class);
         Parent root = fxWeaver.loadView(ResultsController.class);
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
-        stage.setResizable(false);
+        StageManager.changeScene(inputError, root);
     }
 }

@@ -71,12 +71,6 @@ public class SignUpImpl implements SignupService {
     public List<SignUp> findAll() {
         return signUpRepository.findAll();
     }
-
-    @Override
-    public SignUp findByLoginUserName(String userName) {
-        return signUpRepository.findByLoginUserName(userName);
-    }
-
 }
 
 

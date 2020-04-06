@@ -10,11 +10,15 @@ import com.ihmProject.hotelManagement.StageManager;
 import com.ihmProject.hotelManagement.spring.bean.Hotel;
 import com.ihmProject.hotelManagement.spring.service.impl.HotelImpl;
 import com.jfoenix.controls.JFXButton;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -23,6 +27,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
@@ -133,13 +138,17 @@ public class ResultsController implements Initializable {
         resCityName.setText(JavaFxApplication.chosenCity);
         System.out.println("hi");
         System.out.println(listHotels);
-        displayHotels();
+        try {
+            displayHotels();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ResultsController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         resPageNumber.setText(pageNumber + " / " + x);
         userNameLabel.setText(JavaFxApplication.login.getUserName());
 
     }
 
-    public void goToNextPage() {
+    public void goToNextPage() throws FileNotFoundException {
         cmp = cmp - 3;
         if (cmp > 3) {
             resPageNumber.setText(pageNumber++ + " / " + x);
@@ -151,7 +160,7 @@ public class ResultsController implements Initializable {
         displayHotels();
     }
 
-    public void goToPreviousPage() {
+    public void goToPreviousPage() throws FileNotFoundException {
         cmp = cmp - 3;
         if (cmp > 0) {
             resPageNumber.setText(pageNumber-- + " / " + x);
@@ -164,14 +173,18 @@ public class ResultsController implements Initializable {
 
     }
 
-    public void displayHotels() {
+    public void displayHotels() throws FileNotFoundException {
         int i = this.i;
+        System.out.println("les i : " + i);
+        hbChildImage.setImage(new Image(new FileInputStream(listHotels.get(i).getImage())));
         resCityName.setText(listHotels.get(i).getCity());
         resHotelName.setText(listHotels.get(i).getName());
         resHotelStars.setRating(listHotels.get(i).getStars());
+        hbChildImage1.setImage(new Image(new FileInputStream(listHotels.get(i +1).getImage())));
         resCityName1.setText(listHotels.get(i + 1).getCity());
         resHotelName1.setText(listHotels.get(i + 1).getName());
         resHotelStars1.setRating(listHotels.get(i + 1).getStars());
+        hbChildImage11.setImage(new Image(new FileInputStream(listHotels.get(i +2).getImage())));
         resCityName11.setText(listHotels.get(i + 2).getCity());
         resHotelName11.setText(listHotels.get(i + 2).getName());
         resHotelStars11.setRating(listHotels.get(i + 2).getStars());

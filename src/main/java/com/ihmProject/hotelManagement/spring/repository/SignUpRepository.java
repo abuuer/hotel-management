@@ -18,6 +18,4 @@ public interface SignUpRepository extends JpaRepository<SignUp, Long> {
 
     SignUp findByUserName(String userName);
     
-    SignUp findByLoginUserName(String userName);
-    
 }

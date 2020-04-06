@@ -14,14 +14,12 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
-import java.util.Arrays;
 import java.util.Base64;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 /**
@@ -56,8 +54,6 @@ public class LoginImpl implements LoginService {
             } catch (NoSuchAlgorithmException | InvalidKeySpecException ex) {
                 ex.getStackTrace();
             }
-            System.out.println(rawPwdHashed);
-            System.out.println(foundedUser.getPassword());
             if (!rawPwdHashed.equals(foundedUser.getPassword())) {
                 return -3;
             } else {
@@ -79,7 +75,20 @@ public class LoginImpl implements LoginService {
         if (fLogin != null) {
             return -1;
         } else {
-            loginRepository.save(login);
+            try {
+                SecureRandom random = new SecureRandom();
+                byte[] salt = new byte[16];
+                random.nextBytes(salt);
+                KeySpec spec = new PBEKeySpec(login.getRawPassword().toCharArray(), salt, 65536, 128);
+                SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
+                byte[] hash = factory.generateSecret(spec).getEncoded();
+                Base64.Encoder enc = Base64.getEncoder();
+                login.setRawPassword(enc.encodeToString(hash));
+                loginRepository.save(login);
+                return 1;
+            } catch (NoSuchAlgorithmException | InvalidKeySpecException ex) {
+                Logger.getLogger(LoginImpl.class.getName()).log(Level.SEVERE, null, ex);
+            }
             return 1;
         }
     }

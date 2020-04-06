@@ -21,5 +21,4 @@ public interface SignupService {
 
     List<SignUp> findAll();
 
-    SignUp findByLoginUserName(String userName);
 }
